@@ -1,0 +1,3307 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)https://1bruhmogus.github.io/math/ -->
+<html lang="en" data-theme=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OPSG</title>
+<link rel="preconnect" href="https://fonts.googleapis.com/">
+<link href="./OPSG v1.5_files/css2" rel="stylesheet">
+<style>
+
+
+:root{
+ 
+  --bg0:#00060f;--bg1:#000d1a;--bg2:#001428;--bg3:#001e38;
+  --sf:rgba(0,14,30,0.82);--sf2:rgba(0,20,42,0.92);
+  --bd:rgba(30,120,255,0.22);--bd2:rgba(80,170,255,0.55);
+  --ac:#1a6fff;--ac2:#4da6ff;--ac3:#99d0ff;
+  --gl:rgba(26,111,255,0.45);--gl2:rgba(77,166,255,0.22);
+  --tx:#ddeeff;--tx2:rgba(221,238,255,0.65);--tx3:rgba(221,238,255,0.3);
+  --gr:linear-gradient(135deg,#0a4fd4,#1a6fff,#4da6ff,#99d0ff);
+  --gr2:linear-gradient(135deg,rgba(26,111,255,0.24),rgba(77,166,255,0.1));
+  --r:18px;--r2:24px;--tr:0.24s cubic-bezier(0.4,0,0.2,1);
+  --glass-bg:rgba(0,12,28,0.85);
+  --glass-border:#4da6ff24;
+  --glass-hi:rgba(100,180,255,0.08);
+  --glass-shadow:0 20px 60px rgba(0,0,0,0.65),0 4px 16px rgba(0,30,80,0.6);
+}
+[data-theme=blue]{--bg0:#020408;--bg1:#060c16;--bg2:#0a1626;--bg3:#0f2038;--bd:rgba(28,125,255,0.18);--bd2:rgba(55,165,255,0.45);--ac:#1e7fff;--ac2:#38aaff;--ac3:#7eceff;--gl:rgba(30,127,255,0.38);--gl2:rgba(56,170,255,0.16);--tx:#dff0ff;--tx2:rgba(223,240,255,0.65);--tx3:rgba(223,240,255,0.33);--gr:linear-gradient(135deg,#1e7fff,#38aaff,#7eceff);--gr2:linear-gradient(135deg,rgba(30,127,255,0.25),rgba(56,170,255,0.1));--glass-bg:rgba(4,12,28,0.62)}
+[data-theme=red]{--bg0:#060202;--bg1:#0f0506;--bg2:#1e0909;--bg3:#2e0f0f;--bd:rgba(200,25,25,0.18);--bd2:rgba(240,65,65,0.45);--ac:#c81e1e;--ac2:#f04545;--ac3:#ff8585;--gl:rgba(200,30,30,0.38);--gl2:rgba(240,70,70,0.16);--tx:#ffe2e2;--tx2:rgba(255,226,226,0.65);--tx3:rgba(255,226,226,0.33);--gr:linear-gradient(135deg,#c81e1e,#f04545,#ff8585);--gr2:linear-gradient(135deg,rgba(200,30,30,0.25),rgba(240,70,70,0.1));--glass-bg:rgba(18,4,4,0.62)}
+[data-theme=green]{--bg0:#010805;--bg1:#050f0a;--bg2:#091e12;--bg3:#0e2e1c;--bd:rgba(16,176,78,0.18);--bd2:rgba(46,218,116,0.45);--ac:#10b04e;--ac2:#2eda74;--ac3:#78f5ae;--gl:rgba(16,176,78,0.38);--gl2:rgba(46,218,116,0.16);--tx:#dffcee;--tx2:rgba(223,252,238,0.65);--tx3:rgba(223,252,238,0.33);--gr:linear-gradient(135deg,#10b04e,#2eda74,#78f5ae);--gr2:linear-gradient(135deg,rgba(16,176,78,0.25),rgba(46,218,116,0.1));--glass-bg:rgba(4,16,8,0.62)}
+[data-theme=amber]{--bg0:#060402;--bg1:#0f0a04;--bg2:#1e1408;--bg3:#2f200d;--bd:rgba(215,136,16,0.18);--bd2:rgba(255,178,48,0.45);--ac:#d78810;--ac2:#ffb230;--ac3:#ffd87a;--gl:rgba(215,136,16,0.38);--gl2:rgba(255,178,48,0.16);--tx:#fff8de;--tx2:rgba(255,248,222,0.65);--tx3:rgba(255,248,222,0.33);--gr:linear-gradient(135deg,#d78810,#ffb230,#ffd87a);--gr2:linear-gradient(135deg,rgba(215,136,16,0.25),rgba(255,178,48,0.1));--glass-bg:rgba(16,12,2,0.62)}
+[data-theme=purple]{--bg0:#020208;--bg1:#07060e;--bg2:#0c0a1c;--bg3:#14102a;--bd:rgba(110,40,220,0.2);--bd2:rgba(160,80,250,0.5);--ac:#7c3aed;--ac2:#a855f7;--ac3:#c084fc;--gl:rgba(124,58,237,0.4);--gl2:rgba(168,85,247,0.18);--tx:#ede0ff;--tx2:rgba(237,224,255,0.62);--tx3:rgba(237,224,255,0.3);--gr:linear-gradient(135deg,#7c3aed,#a855f7,#c084fc);--gr2:linear-gradient(135deg,rgba(124,58,237,0.22),rgba(168,85,247,0.09));--glass-bg:rgba(12,8,28,0.6);--glass-hi:rgba(255,255,255,0.06)}
+
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:16px;-webkit-font-smoothing:antialiased}
+body{
+  background:var(--bg0);color:var(--tx);
+  font-family:'DM Sans',sans-serif;
+  line-height:1.6;overflow-x:hidden;min-height:100vh;
+  /* subtle film grain using SVG filter */
+}
+
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:rgba(168,85,247,.35);border-radius:2px}
+a{color:inherit;text-decoration:none}
+button{font-family:'DM Sans',sans-serif;cursor:pointer}
+#bgc{position:fixed;inset:0;z-index:0;pointer-events:none}
+
+#ss{position:fixed;inset:0;z-index:9999;background:#000;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    overflow:hidden;transition:opacity .9s cubic-bezier(.4,0,.2,1),visibility .9s}
+#ss.gone{opacity:0;visibility:hidden;pointer-events:none}
+.ss-scan{position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(124,58,237,.018) 3px,rgba(124,58,237,.018) 4px);animation:scanSh 12s linear infinite;pointer-events:none}
+@keyframes scanSh{to{background-position:0 100px}}
+.ss-gl{position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 50%,rgba(124,58,237,.22),transparent 72%);animation:glPulse 2.8s ease-in-out infinite}
+@keyframes glPulse{0%,100%{opacity:.6}50%{opacity:1}}
+/* four corner brackets */
+.ssc{position:absolute;width:64px;height:64px;border:1px solid var(--ac3);opacity:.2}
+.ssc.tl{top:2.5rem;left:2.5rem;border-right:none;border-bottom:none}
+.ssc.tr{top:2.5rem;right:2.5rem;border-left:none;border-bottom:none}
+.ssc.bl{bottom:2.5rem;left:2.5rem;border-right:none;border-top:none}
+.ssc.br{bottom:2.5rem;right:2.5rem;border-left:none;border-top:none}
+.ss-eyebrow{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.4em;color:var(--ac3);text-transform:uppercase;z-index:1;margin-bottom:1.2rem;opacity:0;animation:slideUp .6s ease .1s forwards}
+.ss-ttl{font-family:'Cinzel Decorative',serif;font-weight:900;font-size:clamp(2rem,7vw,5rem);letter-spacing:.04em;letter-spacing:-.01em;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;z-index:1;text-align:center;animation:slideUp .8s cubic-bezier(.16,1,.3,1) both}
+@keyframes slideUp{from{opacity:0;transform:translateY(32px)}to{opacity:1;transform:translateY(0)}}
+.ss-sub{font-family:'DM Sans',sans-serif;font-weight:300;font-size:clamp(.8rem,2vw,1.1rem);letter-spacing:.45em;color:var(--tx3);text-transform:uppercase;margin-top:.6rem;z-index:1;animation:slideUp .8s ease .25s both}
+.ss-bar{width:min(280px,70vw);height:1px;background:rgba(255,255,255,.08);margin-top:2.4rem;overflow:hidden;z-index:1;animation:slideUp .8s ease .45s both}
+.ss-fill{height:100%;background:var(--gr);animation:fillBar 2.2s ease forwards}
+@keyframes fillBar{from{width:0}to{width:100%}}
+.ss-tag{font-family:'Share Tech Mono',monospace;font-size:.6rem;color:rgba(255,255,255,.2);letter-spacing:.18em;margin-top:1.2rem;z-index:1;animation:slideUp .8s ease .65s both;text-transform:uppercase}
+
+#gs{position:absolute;inset:0;z-index:100;background:#000;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    transition:opacity .55s ease;overflow:hidden}
+#gs.gone{opacity:0;pointer-events:none}
+.gs-gl{position:absolute;inset:0;background:radial-gradient(ellipse 62% 55% at 50% 50%,rgba(124,58,237,.36),transparent 70%);animation:glPulse .85s ease-in-out infinite}
+.gs-ttl{font-family:'Cinzel Decorative',serif;font-weight:900;font-size:clamp(1.4rem,3.8vw,3rem);background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;z-index:1;text-align:center;animation:gsZoom .5s cubic-bezier(.16,1,.3,1) both}
+@keyframes gsZoom{from{opacity:0;transform:scale(.55) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.gs-sub{font-family:'Share Tech Mono',monospace;font-size:.68rem;letter-spacing:.42em;color:rgba(192,132,252,.35);text-transform:uppercase;margin-top:.55rem;z-index:1;animation:slideUp .6s ease .28s both}
+.gs-bar{width:180px;height:1px;background:rgba(255,255,255,.06);margin-top:1.8rem;overflow:hidden;z-index:1;animation:slideUp .6s ease .48s both}
+.gs-fill{height:100%;background:var(--gr);animation:fillBar 1.95s ease forwards}
+
+#app{position:relative;z-index:1;min-height:100vh;display:flex;flex-direction:column;opacity:0;transition:opacity .9s ease}
+#app.vis{opacity:1}
+
+#hdr{
+  position:sticky;top:0;z-index:200;
+  height:56px;
+  display:flex;align-items:center;gap:.75rem;
+  padding:0 2rem;
+  background:rgba(2,2,8,.75);
+  border-bottom:1px solid rgba(255,255,255,.05);
+  backdrop-filter:saturate(180%) blur(24px);
+  -webkit-backdrop-filter:saturate(180%) blur(24px);
+  transform:translateY(-100%);
+  transition:transform .65s cubic-bezier(.4,0,.2,1);
+}
+#app.vis #hdr{transform:translateY(0)}
+/* the ultra-thin accent line — moves left to right */
+#hdr::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,var(--ac2) 40%,var(--ac3) 60%,transparent);
+  background-size:200% 100%;
+  animation:hdrShim 4s linear infinite;
+  opacity:.55;
+}
+@keyframes hdrShim{0%{background-position:120% 0}100%{background-position:-120% 0}}
+
+.logo{
+  font-family:'Cinzel Decorative',serif;font-weight:900;letter-spacing:.04em;
+  font-size:1.05rem;letter-spacing:.01em;
+  background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  cursor:pointer;flex-shrink:0;user-select:none;white-space:nowrap;
+}
+/* spinning icon before logo text */
+.lic{display:inline-block;font-style:normal;font-family:'DM Sans',sans-serif;margin-right:.3rem;animation:lSpin 6s linear infinite;-webkit-text-fill-color:transparent;background:var(--gr);-webkit-background-clip:text;background-clip:text}
+@keyframes lSpin{to{transform:rotate(360deg)}}
+
+.nav{display:flex;gap:1px;flex:1;justify-content:center;overflow-x:auto;scrollbar-width:none}
+.nav::-webkit-scrollbar{display:none}
+.np{
+  background:transparent;border:none;
+  color:rgba(255,255,255,.38);
+  font-family:'DM Sans',sans-serif;font-weight:500;font-size:.76rem;letter-spacing:.04em;
+  padding:.3rem .85rem;border-radius:8px;
+  transition:color .18s,background .18s;
+  white-space:nowrap;
+}
+.np:hover{color:rgba(255,255,255,.72);background:rgba(255,255,255,.06)}
+.np.on{color:#fff;background:rgba(124,58,237,.2)}
+/* active dot indicator */
+.np.on::after{content:'';display:block;width:3px;height:3px;border-radius:50%;background:var(--ac2);margin:.18rem auto 0;box-shadow:0 0 6px var(--ac2)}
+
+.hr{display:flex;align-items:center;gap:.4rem;flex-shrink:0}
+/* search — pill shaped, Apple-style */
+.sw{position:relative}
+#srch{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--tx);
+  font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:400;
+  padding:.32rem .85rem .32rem 2rem;
+  border-radius:20px;outline:none;
+  width:175px;
+  transition:width .3s ease,background .2s,border-color .2s;
+}
+#srch::placeholder{color:rgba(255,255,255,.28)}
+#srch:focus{border-color:rgba(168,85,247,.5);background:rgba(124,58,237,.1);width:220px}
+.si{position:absolute;left:.65rem;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.28);font-size:.75rem;pointer-events:none}
+/* clock */
+.clk{
+  font-family:'Share Tech Mono',monospace;font-size:.72rem;
+  color:var(--ac3);letter-spacing:.04em;
+  padding:.28rem .6rem;
+  background:rgba(124,58,237,.08);
+  border:1px solid rgba(168,85,247,.18);
+  border-radius:8px;min-width:86px;text-align:center;flex-shrink:0;
+}
+/* stealth badge */
+.stag{font-family:'Share Tech Mono',monospace;font-size:.56rem;padding:.14rem .4rem;background:rgba(16,176,78,.1);border:1px solid rgba(46,218,116,.32);color:#2eda74;border-radius:20px;letter-spacing:.06em;white-space:nowrap;animation:sBl 2.2s ease-in-out infinite}
+@keyframes sBl{0%,100%{opacity:.68}50%{opacity:1}}
+/* icon buttons */
+.ib{background:transparent;border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.4);font-size:.88rem;width:32px;height:32px;border-radius:10px;display:flex;align-items:center;justify-content:center;transition:all .18s;flex-shrink:0}
+.ib:hover{border-color:rgba(168,85,247,.5);color:var(--ac2);background:rgba(124,58,237,.12)}
+.ib.on{background:rgba(124,58,237,.22);border-color:var(--ac);color:var(--ac2)}
+
+/* ═══════════════════════════════════════════════════════════════
+   MAIN
+   ═══════════════════════════════════════════════════════════════ */
+#main{flex:1;padding:0 1.5rem 2.5rem;max-width:1760px;margin:0 auto;width:100%}
+.panel{display:none;animation:pIn .3s ease}
+.panel.on{display:block}
+@keyframes pIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+/* ═══════════════════════════════════════════════════════════════
+   HOME HERO  — visithusavik.is style
+   ═══════════════════════════════════════════════════════════════ */
+.home-hero{
+  padding:3.5rem 0 2.5rem;
+  display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap;
+  border-bottom:1px solid rgba(255,255,255,.05);
+  margin-bottom:2rem;
+}
+.hh-left{}
+.hh-eyebrow{font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.32em;color:var(--ac3);text-transform:uppercase;margin-bottom:.75rem}
+.hh-title{
+  font-family:'Cinzel Decorative',serif;font-weight:900;font-style:italic;
+  font-size:clamp(2.4rem,5vw,4.2rem);line-height:1;letter-spacing:-.02em;
+  background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hh-sub{font-family:'DM Sans',sans-serif;font-weight:300;font-size:.88rem;letter-spacing:.12em;color:var(--tx3);text-transform:uppercase;margin-top:.6rem}
+.hh-right{display:flex;gap:1rem;align-items:center}
+.hh-stat{
+  display:flex;flex-direction:column;align-items:center;
+  padding:.9rem 1.4rem;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-top:1px solid var(--glass-hi);
+  border-radius:var(--r);
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  min-width:100px;
+}
+.hh-stat-n{font-family:'Cinzel',serif;font-weight:700;font-size:1.5rem;line-height:1;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hh-stat-l{font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--tx3);text-transform:uppercase;letter-spacing:.12em;margin-top:.25rem}
+
+/* ═══════════════════════════════════════════════════════════════
+   FILTER BAR  — floating pill island
+   ═══════════════════════════════════════════════════════════════ */
+.fbar{
+  display:flex;align-items:center;justify-content:flex-start;
+  gap:.5rem;flex-wrap:wrap;
+  margin-bottom:2rem;
+  position:sticky;top:56px;z-index:100;
+  padding:.85rem 0;
+  background:linear-gradient(to bottom,var(--bg0) 55%,transparent 100%);
+}
+.bg{
+  display:flex;
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-top:1px solid var(--glass-hi);
+  border-radius:12px;
+  padding:3px;gap:2px;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+}
+.b{
+  background:transparent;border:none;
+  color:rgba(255,255,255,.38);
+  font-family:'DM Sans',sans-serif;font-weight:500;font-size:.73rem;letter-spacing:.03em;
+  padding:.3rem .72rem;border-radius:9px;
+  transition:all .18s;white-space:nowrap;
+}
+.b:hover{color:rgba(255,255,255,.75);background:rgba(255,255,255,.08)}
+.b.on{background:var(--gr);color:#fff;box-shadow:0 2px 12px var(--gl)}
+.tsel{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-top:1px solid var(--glass-hi);
+  color:rgba(255,255,255,.55);
+  font-family:'DM Sans',sans-serif;font-weight:500;font-size:.73rem;
+  padding:.32rem .72rem;border-radius:12px;outline:none;cursor:pointer;
+  backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+  box-shadow:0 4px 16px rgba(0,0,0,.35);
+  transition:border-color .18s;
+}
+.tsel:focus{border-color:rgba(168,85,247,.45)}
+
+/* ═══════════════════════════════════════════════════════════════
+   GAMES GRID
+   ═══════════════════════════════════════════════════════════════ */
+#gg{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem;contain:layout}
+#gg.lv{grid-template-columns:1fr;gap:.42rem}
+#lsent{height:1px}
+
+/* ── CARD  — Apple glassmorphism  ─────────────────────────────── */
+.gc{
+  /* deep glass: dark, slightly tinted, blurred */
+  background:rgba(14,10,30,0.55);
+  border:1px solid rgba(255,255,255,.07);
+  border-radius:var(--r);
+  overflow:hidden;cursor:pointer;
+  position:relative;
+  /* Apple-style inner highlight on top edge */
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.09),
+    inset 0 -1px 0 rgba(0,0,0,.35),
+    0 4px 20px rgba(0,0,0,.4);
+  transition:transform .28s cubic-bezier(.34,1.56,.64,1),
+             border-color .2s,
+             box-shadow .2s;
+  will-change:transform;
+  contain:content;
+}
+.gc:hover{
+  transform:translateY(-7px) scale(1.025);
+  border-color:rgba(168,85,247,.4);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.12),
+    inset 0 -1px 0 rgba(0,0,0,.35),
+    0 20px 50px rgba(0,0,0,.55),
+    0 0 0 1px rgba(168,85,247,.25),
+    0 0 40px rgba(124,58,237,.18);
+}
+.gc:active{transform:translateY(-3px) scale(1.01)}
+
+/* COVER */
+.cv{
+  width:100%;aspect-ratio:3/2;overflow:hidden;
+  background:var(--bg3);position:relative;display:block;flex-shrink:0;
+}
+.cv img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gc:hover .cv img{transform:scale(1.07)}
+.cfb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-size:3rem;
+     background:linear-gradient(160deg,var(--bg2),var(--bg3));color:var(--ac);opacity:.38}
+
+/* rich gradient overlay — like editorial photo captions */
+.cv-grad{
+  position:absolute;bottom:0;left:0;right:0;height:65%;
+  background:linear-gradient(to top,rgba(6,4,18,.96) 0%,rgba(6,4,18,.6) 45%,transparent 100%);
+  pointer-events:none;z-index:1;
+}
+/* frosted glass title bar at bottom of card */
+.cv-title{
+  position:absolute;bottom:0;left:0;right:0;z-index:2;
+  padding:.55rem .7rem;
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.82rem;
+  color:#fff;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:capitalize;
+  /* frosted glass underbar */
+  background:rgba(8,4,20,.55);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  border-top:1px solid rgba(255,255,255,.07);
+}
+/* source chip — top left */
+.cv-src{
+  position:absolute;top:.5rem;left:.5rem;z-index:3;
+  font-family:'Share Tech Mono',monospace;font-size:.52rem;letter-spacing:.07em;text-transform:uppercase;
+  padding:.15rem .45rem;
+  background:rgba(0,0,0,.65);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:1px solid rgba(168,85,247,.3);
+  border-radius:6px;color:var(--ac3);
+}
+/* fav star — top right */
+.fs{
+  position:absolute;top:.4rem;right:.45rem;z-index:3;
+  background:rgba(0,0,0,.52);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  border:none;color:rgba(255,255,255,.35);
+  font-size:.85rem;width:26px;height:26px;
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  transition:color .18s,background .18s,transform .2s;
+  cursor:pointer;line-height:1;padding:0;
+}
+.fs:hover{color:#fbbf24;background:rgba(0,0,0,.78);transform:scale(1.22)}
+.fs.on{color:#fbbf24;background:rgba(0,0,0,.7)}
+
+/* play button overlay */
+.cov{position:absolute;inset:0;background:rgba(0,0,0,.38);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .22s;z-index:2}
+.gc:hover .cov{opacity:1}
+.pb{
+  width:56px;height:56px;background:var(--gr);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:1.5rem;
+  box-shadow:0 6px 28px var(--gl),0 0 0 2px rgba(255,255,255,.12);
+  animation:pbPulse 2s ease-in-out infinite;
+}
+@keyframes pbPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+
+/* card body — list view only */
+.cb{display:none}
+
+/* LIST VIEW */
+#gg.lv .gc{
+  display:flex;align-items:center;gap:.75rem;
+  padding:.45rem .75rem;border-radius:12px;
+  background:rgba(14,10,30,.45);
+}
+#gg.lv .gc:hover{transform:translateX(5px) scale(1);border-color:rgba(168,85,247,.3);box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 2px 12px rgba(0,0,0,.4),4px 0 0 var(--ac) inset}
+#gg.lv .cv{width:78px;height:44px;aspect-ratio:auto;border-radius:9px;flex-shrink:0}
+#gg.lv .cv-grad,#gg.lv .cv-title,#gg.lv .cv-src{display:none}
+#gg.lv .fs{position:static;width:24px;height:24px;background:none;backdrop-filter:none;border:none;color:var(--tx3);flex-shrink:0}
+#gg.lv .cov{display:none}
+#gg.lv .cb{display:flex;flex:1;min-width:0;align-items:center;gap:.8rem}
+#gg.lv .ct{font-weight:500;font-size:.88rem;color:var(--tx);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:capitalize;flex:1}
+.cf{display:flex;align-items:center;gap:.42rem;flex-shrink:0}
+.cs{font-family:'Share Tech Mono',monospace;font-size:.58rem;color:var(--tx3);text-transform:uppercase;letter-spacing:.05em;padding:.12rem .4rem;border:1px solid var(--bd);border-radius:5px;opacity:.7}
+
+/* ═══════════════════════════════════════════════════════════════
+   LOADING / EMPTY STATES
+   ═══════════════════════════════════════════════════════════════ */
+.st{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:6rem 2rem;gap:1.6rem;color:var(--tx2);grid-column:1/-1;text-align:center}
+.spin{width:40px;height:40px;border:1.5px solid rgba(255,255,255,.08);border-top-color:var(--ac2);border-radius:50%;animation:spin .85s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.st p{font-family:'Share Tech Mono',monospace;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3)}
+.st-empty-ico{font-size:3.5rem;filter:grayscale(.5);margin-bottom:.25rem}
+.st-empty-title{font-family:'Cinzel',serif;font-weight:700;font-size:1.1rem;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ═══════════════════════════════════════════════════════════════
+   GAME VIEWER
+   ═══════════════════════════════════════════════════════════════ */
+#gv{position:fixed;inset:0;z-index:500;background:#000;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .28s,visibility .28s}
+#gv.open{opacity:1;visibility:visible}
+.vh{
+  height:50px;flex-shrink:0;
+  background:rgba(2,2,8,.9);
+  border-bottom:1px solid rgba(255,255,255,.06);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  display:flex;align-items:center;padding:0 1rem;gap:.55rem;z-index:10;
+  transition:opacity .22s;
+}
+#gv.theater .vh{opacity:.05;pointer-events:none}
+#gv.theater:hover .vh{opacity:1;pointer-events:all}
+.vb-close{
+  background:rgba(240,68,68,.08);border:1px solid rgba(240,68,68,.25);
+  color:rgba(240,68,68,.75);
+  font-family:'DM Sans',sans-serif;font-weight:600;font-size:.78rem;
+  height:30px;padding:0 .8rem;border-radius:8px;
+  display:flex;align-items:center;gap:.3rem;
+  transition:all .18s;flex-shrink:0;cursor:pointer;
+}
+.vb-close:hover{background:rgba(240,68,68,.18);border-color:rgba(240,68,68,.5);color:#f04545}
+.vt{flex:1;font-family:'DM Sans',sans-serif;font-weight:500;font-size:.88rem;color:rgba(255,255,255,.55);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:capitalize;padding:0 .6rem}
+.vh-acts{display:flex;align-items:center;gap:.28rem;flex-shrink:0}
+.vb{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);
+  color:rgba(255,255,255,.38);
+  font-family:'DM Sans',sans-serif;font-weight:500;font-size:.7rem;
+  height:28px;padding:0 .62rem;border-radius:7px;
+  display:flex;align-items:center;gap:.22rem;
+  transition:all .18s;white-space:nowrap;cursor:pointer;
+}
+.vb:hover{border-color:rgba(168,85,247,.45);color:var(--ac2);background:rgba(124,58,237,.14)}
+.vh-sep{width:1px;height:16px;background:rgba(255,255,255,.08);flex-shrink:0;margin:0 .05rem}
+.vbd{flex:1;position:relative;overflow:hidden}
+#gf{width:100%;height:100%;border:none;display:block}
+
+/* ═══════════════════════════════════════════════════════════════
+   GLASS PANEL  — Apple material depth
+   ═══════════════════════════════════════════════════════════════ */
+.glass{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-top:1px solid var(--glass-hi);
+  border-radius:var(--r2);
+  padding:1.6rem;
+  box-shadow:var(--glass-shadow),inset 0 1px 0 var(--glass-hi);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+}
+.glass+.glass{margin-top:1rem}
+
+/* panel header */
+.ph{padding:2rem 0 1.5rem}
+.pt{
+  font-family:'Cinzel',serif;font-weight:700;font-style:italic;
+  font-size:1.5rem;letter-spacing:-.01em;
+  background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  margin-bottom:.35rem;
+}
+.ps{color:var(--tx3);font-size:.84rem;font-weight:300;letter-spacing:.03em}
+
+/* ═══════════════════════════════════════════════════════════════
+   SETTINGS
+   ═══════════════════════════════════════════════════════════════ */
+.sg{display:grid;grid-template-columns:repeat(auto-fill,minmax(295px,1fr));gap:1rem}
+.sc-hdr{display:flex;align-items:center;gap:.65rem;margin-bottom:1.1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.sc-ico{width:32px;height:32px;border-radius:10px;background:var(--gr2);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
+.sl{font-family:'DM Sans',sans-serif;font-weight:600;font-size:.82rem;color:rgba(255,255,255,.85);letter-spacing:.04em;text-transform:uppercase}
+.sd{font-size:.78rem;color:var(--tx3);margin-bottom:.48rem;line-height:1.55;font-weight:300}
+.si2{
+  width:100%;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.09);
+  color:var(--tx);
+  font-family:'DM Sans',sans-serif;font-size:.88rem;
+  padding:.46rem .8rem;border-radius:10px;outline:none;
+  transition:border-color .18s,background .18s;
+}
+.si2:focus{border-color:rgba(168,85,247,.5);background:rgba(124,58,237,.07)}
+/* theme swatches */
+.sws{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.65rem}
+.sw2{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:all .2s;position:relative}
+.sw2:hover{transform:scale(1.22)}
+.sw2.on::after{content:'✓';position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.54rem;color:#fff;font-weight:700}
+.sw2.on{border-color:rgba(255,255,255,.8);box-shadow:0 0 12px rgba(255,255,255,.25)}
+.sw-d{background:linear-gradient(135deg,#7c3aed,#a855f7)}.sw-b{background:linear-gradient(135deg,#1e7fff,#38aaff)}
+.sw-r{background:linear-gradient(135deg,#c81e1e,#f04545)}.sw-g{background:linear-gradient(135deg,#10b04e,#2eda74)}
+.sw-wiz{background:linear-gradient(135deg,#0a4fd4,#1a6fff,#4da6ff)}.sw-a{background:linear-gradient(135deg,#d78810,#ffb230)}.sw-c{background:conic-gradient(#ff0080,#ffff00,#00ff80,#0080ff,#ff0080)}
+/* color pickers */
+.cr{display:flex;gap:.4rem;align-items:center;margin-bottom:.38rem}
+.cl{font-size:.74rem;color:var(--tx2);min-width:60px;font-weight:300}
+input[type=color]{width:28px;height:28px;border:1px solid rgba(255,255,255,.1);border-radius:6px;cursor:pointer;background:none;padding:2px}
+/* toggle */
+.tr{display:flex;align-items:center;justify-content:space-between;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.tr:last-of-type{border-bottom:none}
+.trt{font-size:.84rem;color:var(--tx2);font-weight:400}
+.tog{width:40px;height:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);border-radius:11px;cursor:pointer;position:relative;transition:background .2s,border-color .2s;flex-shrink:0}
+.tog.on{background:var(--ac);border-color:var(--ac)}
+.tog::after{content:'';position:absolute;width:16px;height:16px;background:#fff;border-radius:50%;top:2px;left:2px;transition:transform .2s;box-shadow:0 1px 4px rgba(0,0,0,.5)}
+.tog.on::after{transform:translateX(18px)}
+/* action buttons */
+.ab{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:rgba(255,255,255,.65);font-family:'DM Sans',sans-serif;font-weight:500;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase;padding:.46rem 1.1rem;border-radius:10px;transition:all .18s;cursor:pointer}
+.ab:hover{background:rgba(124,58,237,.18);border-color:rgba(168,85,247,.4);color:#fff;box-shadow:0 4px 16px rgba(124,58,237,.2)}
+.ab.pr{background:var(--gr);color:#fff;border-color:transparent;box-shadow:0 4px 20px var(--gl)}
+.ab.pr:hover{filter:brightness(1.08);box-shadow:0 6px 24px var(--gl)}
+/* source list */
+.srl{display:flex;flex-direction:column;gap:.4rem}
+.sri{display:flex;align-items:center;gap:.65rem;padding:.52rem .75rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;font-size:.84rem;transition:border-color .18s}
+.sri:hover{border-color:rgba(168,85,247,.3)}
+.sri .tog{margin-left:auto}
+
+/* ═══════════════════════════════════════════════════════════════
+   DOCS
+   ═══════════════════════════════════════════════════════════════ */
+.dtbs{display:flex;gap:.4rem;margin-bottom:.9rem}
+.dfr{border-radius:var(--r2);overflow:hidden;border:1px solid rgba(255,255,255,.07);height:calc(100vh - 210px)}
+.dfr iframe{width:100%;height:100%;border:none}
+
+/* ═══════════════════════════════════════════════════════════════
+   BROWSER
+   ═══════════════════════════════════════════════════════════════ */
+.bh{text-align:center;padding:3.5rem 2rem 2.5rem}
+.bico{font-size:4rem;display:block;margin-bottom:1rem;animation:fl 3.5s ease-in-out infinite}
+@keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.bh h3{font-family:'Cinzel',serif;font-weight:700;font-style:italic;font-size:1.4rem;margin-bottom:.6rem;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.bh p{color:var(--tx2);margin-bottom:1.5rem;font-size:.9rem;line-height:1.75;max-width:440px;margin-inline:auto;font-weight:300}
+.br{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap}
+
+/* ═══════════════════════════════════════════════════════════════
+   FORM
+   ═══════════════════════════════════════════════════════════════ */
+.fg{margin-bottom:1rem}
+.fl2{display:block;font-weight:500;font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;color:var(--tx3);margin-bottom:.35rem}
+.fi,.fa{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);color:var(--tx);font-family:'DM Sans',sans-serif;font-size:.9rem;padding:.55rem .8rem;border-radius:10px;outline:none;transition:border-color .18s,background .18s;resize:vertical}
+.fi:focus,.fa:focus{border-color:rgba(168,85,247,.5);background:rgba(124,58,237,.07)}
+.fa{min-height:90px}
+
+/* ═══════════════════════════════════════════════════════════════
+   FAVORITES EMPTY
+   ═══════════════════════════════════════════════════════════════ */
+.fe{text-align:center;padding:5rem 2rem;color:var(--tx3);grid-column:1/-1}
+.fe-i{font-size:3.5rem;margin-bottom:1rem;display:block;opacity:.4}
+
+/* ═══════════════════════════════════════════════════════════════
+   TOASTS  — refined Apple notification
+   ═══════════════════════════════════════════════════════════════ */
+#tsts{position:fixed;bottom:1.6rem;right:1.6rem;z-index:9000;display:flex;flex-direction:column;gap:.42rem;pointer-events:none}
+.tst{
+  background:rgba(20,16,38,.82);
+  border:1px solid rgba(255,255,255,.1);
+  border-top:1px solid rgba(255,255,255,.14);
+  color:var(--tx);
+  font-family:'DM Sans',sans-serif;font-size:.84rem;font-weight:500;
+  padding:.6rem 1rem .6rem .9rem;
+  border-radius:14px;
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  box-shadow:0 8px 32px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.04);
+  animation:tIn .25s cubic-bezier(.34,1.56,.64,1) both;
+  max-width:270px;
+  border-left:2.5px solid var(--ac2);
+}
+.tst.out{animation:tOut .22s ease forwards}
+@keyframes tIn{from{opacity:0;transform:translateX(16px) scale(.95)}to{opacity:1;transform:translateX(0) scale(1)}}
+@keyframes tOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(16px)}}
+
+/* ═══════════════════════════════════════════════════════════════
+   CREDITS
+   ═══════════════════════════════════════════════════════════════ */
+.cred-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:1.2rem;align-items:start}
+.cred-card{
+  background:var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-top:1px solid var(--glass-hi);
+  border-radius:var(--r2);
+  padding:2rem 1.75rem 1.75rem;
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  position:relative;overflow:hidden;
+  box-shadow:var(--glass-shadow);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  transition:transform .3s cubic-bezier(.34,1.56,.64,1),border-color .2s,box-shadow .2s;
+}
+.cred-card:hover{transform:translateY(-6px);border-color:rgba(168,85,247,.35);box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 40px rgba(124,58,237,.15)}
+.owner-card{border-color:rgba(168,85,247,.22);box-shadow:0 20px 60px rgba(0,0,0,.55),0 0 30px rgba(124,58,237,.12)}
+.cred-crown{font-size:2.8rem;margin-bottom:.8rem;filter:drop-shadow(0 0 16px var(--gl));animation:crownFloat 4s ease-in-out infinite}
+@keyframes crownFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.cred-role{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.25em;text-transform:uppercase;color:var(--ac3);margin-bottom:.4rem;padding:.18rem .72rem;background:rgba(124,58,237,.12);border:1px solid rgba(168,85,247,.22);border-radius:20px}
+.cred-name{font-family:'Cinzel',serif;font-weight:700;font-style:italic;font-size:1.7rem;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.7rem}
+.src-card .cred-name{font-size:1.4rem}
+.cred-divider{width:48px;height:1px;background:var(--gr);margin-bottom:1rem;opacity:.6}
+.cred-bio{font-size:.86rem;color:var(--tx2);line-height:1.75;margin-bottom:1.1rem;max-width:280px;font-weight:300}
+.cred-hl{color:var(--ac2);font-weight:600}
+.cred-projs-label{font-family:'Share Tech Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;color:var(--tx3);margin-bottom:.55rem}
+.cred-projs{display:flex;flex-direction:column;gap:.32rem;width:100%;margin-bottom:.9rem}
+.cred-proj{font-size:.82rem;color:var(--tx2);padding:.32rem .78rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:8px;transition:border-color .18s,color .18s;font-weight:400}
+.cred-card:hover .cred-proj{border-color:rgba(168,85,247,.28);color:var(--tx)}
+.cred-tagline{font-family:'Playfair Display',serif;font-style:italic;font-size:.82rem;color:var(--ac3);animation:tagGlow 3s ease-in-out infinite}
+@keyframes tagGlow{0%,100%{opacity:.65}50%{opacity:1;text-shadow:0 0 14px var(--gl)}}
+.cred-link{font-family:'Share Tech Mono',monospace;font-size:.66rem;color:var(--ac2);padding:.28rem .75rem;background:rgba(124,58,237,.1);border:1px solid rgba(168,85,247,.2);border-radius:8px;transition:all .18s;margin-top:.1rem}
+.cred-link:hover{color:#fff;background:rgba(124,58,237,.22);box-shadow:0 3px 14px var(--gl)}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════ */
+@media(max-width:900px){
+  #hdr{padding:0 1rem;gap:.45rem;height:52px}
+  .nav{display:none}
+  #srch{width:130px}#srch:focus{width:155px}
+  #main{padding:0 1rem 3rem}
+  #gg{grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.85rem}
+  .fbar{top:52px}
+  .home-hero{padding:2rem 0 1.5rem}
+}
+@media(max-width:520px){
+  #gg{grid-template-columns:repeat(2,1fr);gap:.6rem}
+  #main{padding:0 .75rem 2rem}
+  .hh-title{font-size:2rem}
+}
+@media(max-width:600px){.cred-grid{grid-template-columns:1fr}}
+
+/* ═══════════════════════════════════════════════════════════════
+   EXTRA VISUAL EFFECTS
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── AURORA — animated mesh gradient behind everything ── */
+#aurora{
+  position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+  opacity:.55;
+}
+.aurora-blob{
+  position:absolute;border-radius:50%;
+  filter:blur(90px);
+  animation:auroraFloat linear infinite;
+  mix-blend-mode:screen;
+}
+.ab1{width:55vw;height:55vw;background:radial-gradient(circle,rgba(124,58,237,.28),transparent 68%);top:-10%;left:-8%;animation-duration:22s;animation-delay:0s}
+.ab2{width:45vw;height:45vw;background:radial-gradient(circle,rgba(168,85,247,.2),transparent 65%);bottom:-12%;right:-5%;animation-duration:28s;animation-delay:-8s}
+.ab3{width:38vw;height:38vw;background:radial-gradient(circle,rgba(192,132,252,.15),transparent 62%);top:30%;left:55%;animation-duration:19s;animation-delay:-4s}
+@keyframes auroraFloat{
+  0%  {transform:translate(0,0) scale(1) rotate(0deg)}
+  25% {transform:translate(5vw,-4vh) scale(1.08) rotate(8deg)}
+  50% {transform:translate(-3vw,6vh) scale(.94) rotate(-5deg)}
+  75% {transform:translate(8vw,2vh) scale(1.04) rotate(12deg)}
+  100%{transform:translate(0,0) scale(1) rotate(0deg)}
+}
+
+/* ── CURSOR TRAIL  ── (drawn via JS onto bgc, style hints here) */
+
+/* ── SPLASH: floating orb ring ── */
+.ss-orbs{position:absolute;inset:0;pointer-events:none;z-index:0}
+.ss-orb{
+  position:absolute;border-radius:50%;
+  border:1px solid rgba(168,85,247,.18);
+  animation:orbExpand ease-out forwards, orbFade ease-out forwards;
+  transform:translate(-50%,-50%);
+  left:50%;top:50%;
+}
+.ss-orb:nth-child(1){width:260px;height:260px;animation-duration:3.5s;animation-delay:.4s;opacity:0}
+.ss-orb:nth-child(2){width:420px;height:420px;animation-duration:3.8s;animation-delay:.9s;opacity:0}
+.ss-orb:nth-child(3){width:600px;height:600px;animation-duration:4.2s;animation-delay:1.3s;opacity:0}
+.ss-orb:nth-child(4){width:820px;height:820px;animation-duration:4.8s;animation-delay:1.8s;opacity:0}
+@keyframes orbExpand{
+  0%  {transform:translate(-50%,-50%) scale(.3);opacity:.7}
+  100%{transform:translate(-50%,-50%) scale(1);opacity:0}
+}
+/* reuse for continuous pulsing after animation ends */
+.ss-orb-loop{
+  position:absolute;border-radius:50%;
+  border:1px solid rgba(168,85,247,.1);
+  transform:translate(-50%,-50%);left:50%;top:50%;
+  animation:orbPulse ease-in-out infinite;
+}
+.ss-orb-loop:nth-child(5){width:320px;height:320px;animation-duration:3.2s;animation-delay:2.5s}
+.ss-orb-loop:nth-child(6){width:520px;height:520px;animation-duration:4s;animation-delay:3s}
+@keyframes orbPulse{
+  0%,100%{opacity:.06;transform:translate(-50%,-50%) scale(.95)}
+  50%{opacity:.18;transform:translate(-50%,-50%) scale(1.04)}
+}
+
+/* ── SPLASH: typewriter shimmer on tag line ── */
+.ss-tag{overflow:hidden;white-space:nowrap;border-right:1px solid rgba(168,85,247,.5);width:0;animation:typewriter 1.8s steps(28,end) 1.2s forwards,cursorBlink .7s step-end 1.2s 4}
+@keyframes typewriter{from{width:0}to{width:17ch}}
+@keyframes cursorBlink{0%,100%{border-color:rgba(168,85,247,.5)}50%{border-color:transparent}}
+
+/* ── SHIMMER SWEEP on filter pills when game loads ── */
+@keyframes shimmerSweep{
+  0%  {background-position:-200% center}
+  100%{background-position:200% center}
+}
+.b.shimmer{
+  background-image:linear-gradient(100deg,transparent 20%,rgba(255,255,255,.18) 50%,transparent 80%);
+  background-size:200% 100%;
+  animation:shimmerSweep .7s ease;
+}
+
+/* ── CARD: chromatic aberration glow on hover ── */
+.gc{transition:transform .28s cubic-bezier(.34,1.56,.64,1),border-color .2s,box-shadow .2s,filter .2s}
+.gc:hover{
+  filter:drop-shadow(0 0 2px rgba(124,58,237,.55)) drop-shadow(-1px 0 0 rgba(0,220,255,.22)) drop-shadow(1px 0 0 rgba(255,0,220,.22));
+}
+
+/* ── CARD: loading shimmer skeleton before image loads ── */
+.cv-shimmer{
+  position:absolute;inset:0;
+  background:linear-gradient(100deg,var(--bg2) 25%,var(--bg3) 50%,var(--bg2) 75%);
+  background-size:200% 100%;
+  animation:skelAnim 1.4s ease infinite;
+}
+@keyframes skelAnim{0%{background-position:200% center}100%{background-position:-200% center}}
+.cv img.loaded + .cv-shimmer{display:none}
+
+/* ── CARD: reveal stagger animation ── */
+@keyframes cardReveal{
+  from{opacity:0;transform:translateY(22px) scale(.96)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+.gc{animation:cardReveal .4s cubic-bezier(.34,1.2,.64,1) both}
+
+/* ── HERO stat: count-up animation via CSS counter  ── */
+@keyframes statPop{
+  0%  {transform:scale(.7);opacity:0}
+  60% {transform:scale(1.12)}
+  100%{transform:scale(1);opacity:1}
+}
+.hh-stat.pop .hh-stat-n{animation:statPop .5s cubic-bezier(.34,1.56,.64,1)}
+
+/* ── NAV PILLS: sliding highlight on active ── */
+.nav{position:relative}
+#nav-ink{
+  position:absolute;height:100%;border-radius:8px;
+  background:rgba(124,58,237,.2);pointer-events:none;
+  transition:left .25s cubic-bezier(.4,0,.2,1),width .25s cubic-bezier(.4,0,.2,1);
+  z-index:0;top:0;
+}
+.np{position:relative;z-index:1}
+
+/* ── AURORA tint update for themes ── */
+/* default = wizard blue */
+.ab1{background:radial-gradient(circle,rgba(26,111,255,.28),transparent 68%)}
+.ab2{background:radial-gradient(circle,rgba(77,166,255,.2),transparent 65%)}
+.ab3{background:radial-gradient(circle,rgba(153,208,255,.14),transparent 62%)}
+[data-theme=purple] .ab1{background:radial-gradient(circle,rgba(124,58,237,.28),transparent 68%)}
+[data-theme=purple] .ab2{background:radial-gradient(circle,rgba(168,85,247,.2),transparent 65%)}
+[data-theme=purple] .ab3{background:radial-gradient(circle,rgba(192,132,252,.15),transparent 62%)}
+[data-theme=blue] .ab1{background:radial-gradient(circle,rgba(30,127,255,.28),transparent 68%)}
+[data-theme=blue] .ab2{background:radial-gradient(circle,rgba(56,170,255,.2),transparent 65%)}
+[data-theme=blue] .ab3{background:radial-gradient(circle,rgba(126,206,255,.15),transparent 62%)}
+[data-theme=red] .ab1{background:radial-gradient(circle,rgba(200,30,30,.28),transparent 68%)}
+[data-theme=red] .ab2{background:radial-gradient(circle,rgba(240,70,70,.2),transparent 65%)}
+[data-theme=red] .ab3{background:radial-gradient(circle,rgba(255,133,133,.15),transparent 62%)}
+[data-theme=green] .ab1{background:radial-gradient(circle,rgba(16,176,78,.28),transparent 68%)}
+[data-theme=green] .ab2{background:radial-gradient(circle,rgba(46,218,116,.2),transparent 65%)}
+[data-theme=green] .ab3{background:radial-gradient(circle,rgba(120,245,174,.15),transparent 62%)}
+[data-theme=amber] .ab1{background:radial-gradient(circle,rgba(215,136,16,.28),transparent 68%)}
+[data-theme=amber] .ab2{background:radial-gradient(circle,rgba(255,178,48,.2),transparent 65%)}
+[data-theme=amber] .ab3{background:radial-gradient(circle,rgba(255,216,122,.15),transparent 62%)}
+
+
+/* ═══════════════════════════════════════════════════════════
+   POPULAR EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── 1. MAGNETIC CARD TILT (3D perspective on hover) ─────── */
+#gg{perspective:1200px}
+.gc{transform-style:preserve-3d;transition:transform .18s ease,border-color .2s,box-shadow .2s,filter .2s}
+/* JS adds --rx --ry via style, CSS reads them */
+.gc.tilt{transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateZ(6px) scale(1.03)}
+.gc.tilt::after{
+  content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.09) 0%,transparent 65%);
+  z-index:10;
+}
+
+/* ── 2. RIPPLE CLICK ─────────────────────────────────────── */
+@keyframes rippleOut{
+  from{transform:translate(-50%,-50%) scale(0);opacity:.55}
+  to{transform:translate(-50%,-50%) scale(3.5);opacity:0}
+}
+.ripple{
+  position:absolute;width:80px;height:80px;border-radius:50%;
+  background:radial-gradient(circle,rgba(168,85,247,.45),rgba(124,58,237,.15));
+  pointer-events:none;z-index:20;
+  animation:rippleOut .55s cubic-bezier(0,.5,.5,1) forwards;
+}
+
+/* ── 3. SCROLL REVEAL for panels ─────────────────────────── */
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .55s ease,transform .55s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+/* stagger children inside a reveal group */
+.reveal-group > *{opacity:0;transform:translateY(20px);transition:opacity .45s ease,transform .45s cubic-bezier(.16,1,.3,1)}
+.reveal-group.in > *:nth-child(1){transition-delay:.05s}
+.reveal-group.in > *:nth-child(2){transition-delay:.12s}
+.reveal-group.in > *:nth-child(3){transition-delay:.19s}
+.reveal-group.in > *:nth-child(4){transition-delay:.26s}
+.reveal-group.in > *:nth-child(5){transition-delay:.33s}
+.reveal-group.in > *{opacity:1;transform:translateY(0)}
+
+/* ── 4. HERO TITLE: gradient text shimmer sweep ─────────── */
+.hh-title{
+  background-size:250% 100%;
+  animation:titleShimmer 5s linear infinite;
+}
+@keyframes titleShimmer{
+  0%  {background-position:0% center}
+  50% {background-position:100% center}
+  100%{background-position:0% center}
+}
+
+/* ── 5. FOCUS RING — keyboard accessibility glow ────────── */
+:focus-visible{outline:2px solid var(--ac2);outline-offset:3px;border-radius:6px}
+
+/* ── 6. LOADING BAR — thin top progress bar ─────────────── */
+#topbar{
+  position:fixed;top:0;left:0;height:2px;z-index:9999;
+  background:var(--gr);
+  width:0%;
+  transition:width .3s ease,opacity .4s ease;
+  box-shadow:0 0 10px var(--gl);
+  pointer-events:none;
+  border-radius:0 2px 2px 0;
+}
+#topbar.done{width:100%;opacity:0}
+
+/* ── 7. CARD SHIMMER: remove skeleton once image loaded ─── */
+.gc .cv-shimmer{display:block}
+.gc .cv img{position:relative;z-index:1}
+
+/* ── 8. FLOATING ORB AMBIENT — subtle drifting circles ──── */
+.amb-orb{
+  position:fixed;border-radius:50%;pointer-events:none;z-index:0;
+  animation:orbDrift ease-in-out infinite;
+  mix-blend-mode:screen;
+}
+.amb-orb:nth-child(1){width:380px;height:380px;bottom:-120px;left:-80px;background:radial-gradient(circle,rgba(124,58,237,.06),transparent 70%);animation-duration:18s}
+.amb-orb:nth-child(2){width:280px;height:280px;top:20%;right:-60px;background:radial-gradient(circle,rgba(168,85,247,.05),transparent 65%);animation-duration:24s;animation-delay:-7s}
+.amb-orb:nth-child(3){width:200px;height:200px;top:55%;left:42%;background:radial-gradient(circle,rgba(192,132,252,.04),transparent 62%);animation-duration:15s;animation-delay:-3s}
+@keyframes orbDrift{
+  0%  {transform:translate(0,0) scale(1)}
+  33% {transform:translate(18px,-22px) scale(1.06)}
+  66% {transform:translate(-12px,14px) scale(.94)}
+  100%{transform:translate(0,0) scale(1)}
+}
+
+/* ── 9. PANEL HEADER: animated gradient underline ────────── */
+.ph::after{
+  content:'';display:block;height:1px;margin-top:.75rem;
+  background:linear-gradient(90deg,var(--ac),var(--ac2),var(--ac3),transparent);
+  background-size:200% 100%;
+  animation:hdrShim 3s linear infinite;
+  opacity:.4;border-radius:1px;
+}
+
+/* ── 10. BUTTON HOVER: subtle lift + glow ────────────────── */
+.ab{transition:all .2s cubic-bezier(.34,1.56,.64,1)}
+.ab:hover{transform:translateY(-2px)}
+.ab:active{transform:translateY(0)}
+
+/* ── 11. TOAST: slide in from bottom-right with spring ───── */
+@keyframes tIn{
+  from{opacity:0;transform:translateX(20px) translateY(8px) scale(.9)}
+  to{opacity:1;transform:translateX(0) translateY(0) scale(1)}
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   OFFICIAL HOMEPAGE BANNER
+   ═══════════════════════════════════════════════════════════ */
+.hp-banner{
+  position:relative;overflow:hidden;
+  margin:1.5rem 0 2rem;
+  padding:3rem 3rem 3rem;
+  border-radius:28px;
+  border:1px solid var(--bd2);
+  background:var(--glass-bg);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  display:flex;align-items:center;justify-content:space-between;gap:2.5rem;flex-wrap:wrap;
+  box-shadow:0 0 0 1px var(--bd),0 32px 80px rgba(0,0,0,.55),inset 0 1px 0 var(--glass-hi);
+}
+/* background glow */
+.hp-bg-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 80% 90% at 15% 50%,rgba(232,69,10,.1),transparent 65%),
+             radial-gradient(ellipse 50% 60% at 90% 20%,rgba(255,107,32,.07),transparent 60%);
+  animation:hpGlow 6s ease-in-out infinite;
+}
+@keyframes hpGlow{0%,100%{opacity:.7}50%{opacity:1}}
+/* scanline overlay */
+.hp-scanlines{
+  position:absolute;inset:0;pointer-events:none;
+  background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(255,120,40,.012) 3px,rgba(255,120,40,.012) 4px);
+  border-radius:inherit;
+}
+/* left content */
+.hp-left{flex:1;min-width:280px;position:relative;z-index:1}
+.hp-eyebrow{
+  display:none;
+}
+.hp-dot{
+  width:7px;height:7px;border-radius:50%;background:var(--ac2);
+  box-shadow:0 0 10px var(--gl);animation:dotPulse 2s ease-in-out infinite;flex-shrink:0;
+}
+@keyframes dotPulse{0%,100%{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+.hp-pipe{opacity:.3}
+.hp-title{
+  font-family:'Cinzel Decorative',serif;font-weight:900;
+  font-size:clamp(2.8rem,6vw,5.5rem);
+  line-height:.95;letter-spacing:-.03em;
+  background:var(--gr);
+  background-size:250% 100%;
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+  animation:titleShimmer 5s linear infinite;
+  margin-bottom:1.1rem;
+}
+.hp-title em{font-style:italic;display:block}
+.hp-desc{
+  font-family:'DM Sans',sans-serif;font-weight:300;
+  font-size:.95rem;line-height:1.75;color:var(--tx2);
+  max-width:480px;margin-bottom:1.5rem;
+}
+.hp-badges{display:flex;gap:.3rem;flex-wrap:wrap;margin-top:.2rem}
+.hp-badge{
+  display:flex;align-items:center;gap:.38rem;
+  padding:.3rem .72rem;
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-top:1px solid rgba(255,255,255,.1);
+  border-radius:20px;
+  font-family:'DM Sans',sans-serif;font-size:.75rem;font-weight:500;
+  color:var(--tx2);
+  transition:border-color .2s,background .2s;
+}
+.hp-badge:hover{border-color:var(--bd2);background:rgba(255,255,255,.07);color:var(--tx)}
+.hp-badge-ico{font-size:.85rem}
+/* right stat cards */
+.hp-right{display:flex;flex-direction:row;gap:.5rem;align-items:center;position:relative;z-index:1;flex-shrink:0;flex-wrap:wrap}
+.hp-stat-card{
+  min-width:130px;
+  padding:.9rem 1.4rem;
+  background:rgba(0,0,0,.3);
+  border:1px solid var(--bd);
+  border-top:1px solid var(--glass-hi);
+  border-radius:16px;
+  text-align:right;
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  transition:border-color .2s,box-shadow .2s;
+}
+.hp-stat-card:hover{border-color:var(--bd2);box-shadow:0 4px 20px var(--gl2)}
+.hp-stat-n{
+  font-family:'Cinzel',serif;font-weight:700;
+  font-size:1.9rem;line-height:1;
+  background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.hp-stat-l{
+  font-family:'Share Tech Mono',monospace;font-size:.5rem;
+  color:var(--tx3);text-transform:uppercase;letter-spacing:.08em;margin-top:.08rem;
+}
+@media(max-width:700px){
+  .hp-banner{padding:2rem 1.5rem;flex-direction:column;align-items:flex-start}
+  .hp-right{flex-direction:row;align-items:center;width:100%;flex-wrap:wrap}
+  .hp-stat-card{text-align:left;flex:1;min-width:90px}
+  .hp-title{font-size:clamp(2.2rem,8vw,3.5rem)}
+}
+
+
+/* ════════════════════════════════════════════════════
+   RECENTLY PLAYED STRIP
+   ════════════════════════════════════════════════════ */
+.rp-section{margin-bottom:1.8rem}
+.rp-label{display:flex;align-items:center;gap:.6rem;font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ac3);margin-bottom:.75rem}
+.rp-label::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--bd),transparent)}
+.rp-strip{display:flex;gap:.65rem;overflow-x:auto;scrollbar-width:none;padding-bottom:.2rem}
+.rp-strip::-webkit-scrollbar{display:none}
+.rp-card{flex-shrink:0;width:130px;cursor:pointer;border-radius:12px;overflow:hidden;border:1px solid var(--bd);background:var(--glass-bg);transition:transform .2s,border-color .2s;position:relative}
+.rp-card:hover{transform:translateY(-4px);border-color:var(--bd2)}
+.rp-card img{width:100%;height:73px;object-fit:cover;display:block}
+.rp-card-fb{width:100%;height:73px;display:flex;align-items:center;justify-content:center;font-size:2rem;background:linear-gradient(135deg,var(--bg2),var(--bg3))}
+.rp-card-name{font-size:.72rem;font-weight:600;color:var(--tx2);padding:.38rem .5rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:capitalize}
+.rp-card-time{font-family:'Share Tech Mono',monospace;font-size:.56rem;color:var(--tx3);padding:0 .5rem .38rem;display:flex;align-items:center;justify-content:space-between}
+/* continue badge */
+.rp-cont-badge{position:absolute;top:.3rem;right:.3rem;background:var(--ac);color:#fff;font-family:'Share Tech Mono',monospace;font-size:.5rem;padding:.1rem .35rem;border-radius:4px;letter-spacing:.04em;text-transform:uppercase}
+
+/* ════════════════════════════════════════════════════
+   TAG CLOUD
+   ════════════════════════════════════════════════════ */
+.tag-cloud{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.tag-pill{
+  font-family:'DM Sans',sans-serif;font-size:.72rem;font-weight:500;
+  padding:.24rem .62rem;border-radius:20px;
+  background:rgba(255,255,255,.04);border:1px solid var(--bd);
+  color:var(--tx3);cursor:pointer;transition:all .18s;white-space:nowrap;
+}
+.tag-pill:hover{background:rgba(255,255,255,.09);border-color:var(--bd2);color:var(--tx)}
+.tag-pill.on{background:var(--gr);color:#fff;border-color:transparent;box-shadow:0 2px 10px var(--gl)}
+
+/* ════════════════════════════════════════════════════
+   CARD SIZE SLIDER
+   ════════════════════════════════════════════════════ */
+.size-slider-wrap{display:flex;align-items:center;gap:.6rem}
+.size-slider-wrap label{font-family:'Share Tech Mono',monospace;font-size:.62rem;color:var(--tx3);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+input[type=range].csz{
+  -webkit-appearance:none;appearance:none;
+  height:3px;background:var(--bd);border-radius:2px;outline:none;flex:1;
+  cursor:pointer;
+}
+input[type=range].csz::-webkit-slider-thumb{
+  -webkit-appearance:none;width:14px;height:14px;border-radius:50%;
+  background:var(--gr);cursor:pointer;box-shadow:0 0 6px var(--gl);
+}
+input[type=range].csz::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--ac2);cursor:pointer;border:none}
+/* grid density classes */
+#gg.sz-sm{grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.65rem}
+#gg.sz-md{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem}
+#gg.sz-lg{grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.5rem}
+
+/* ════════════════════════════════════════════════════
+   SEARCH SUGGESTIONS DROPDOWN
+   ════════════════════════════════════════════════════ */
+#srch-wrap{position:relative}
+#srch-suggestions{
+  position:absolute;top:calc(100% + 4px);left:0;right:0;z-index:500;
+  background:rgba(20,8,2,.96);border:1px solid var(--bd2);border-radius:12px;
+  box-shadow:0 12px 40px rgba(0,0,0,.6);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  overflow:hidden;display:none;max-height:240px;overflow-y:auto;
+}
+#srch-suggestions.open{display:block}
+.sug-item{
+  padding:.5rem .85rem;font-size:.84rem;cursor:pointer;color:var(--tx2);
+  border-bottom:1px solid rgba(255,255,255,.04);
+  display:flex;align-items:center;gap:.6rem;
+  transition:background .14s,color .14s;
+}
+.sug-item:last-child{border-bottom:none}
+.sug-item:hover,.sug-item.active{background:rgba(255,255,255,.07);color:var(--tx)}
+.sug-item img{width:36px;height:20px;object-fit:cover;border-radius:4px;flex-shrink:0}
+.sug-item-fb{width:36px;height:20px;border-radius:4px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0}
+.sug-match{color:var(--ac2)}
+
+/* ════════════════════════════════════════════════════
+   GAME INFO MODAL
+   ════════════════════════════════════════════════════ */
+#info-modal{
+  position:fixed;inset:0;z-index:800;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;
+  padding:1rem;
+}
+#info-modal.open{opacity:1;visibility:visible}
+.im-box{
+  background:var(--glass-bg);border:1px solid var(--bd2);border-top:1px solid var(--glass-hi);
+  border-radius:var(--r2);box-shadow:0 32px 80px rgba(0,0,0,.7);
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  width:min(520px,95vw);max-height:82vh;overflow-y:auto;
+  animation:imIn .28s cubic-bezier(.34,1.56,.64,1);
+}
+@keyframes imIn{from{opacity:0;transform:scale(.88) translateY(16px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.im-cover{width:100%;height:200px;object-fit:cover;display:block;border-radius:var(--r2) var(--r2) 0 0}
+.im-cover-fb{width:100%;height:160px;display:flex;align-items:center;justify-content:center;font-size:4rem;background:linear-gradient(135deg,var(--bg2),var(--bg3));border-radius:var(--r2) var(--r2) 0 0}
+.im-body{padding:1.6rem}
+.im-title{font-family:'Cinzel',serif;font-weight:700;font-size:1.25rem;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.25rem;text-transform:capitalize}
+.im-src{font-family:'Share Tech Mono',monospace;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ac3);margin-bottom:1.2rem}
+.im-row{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:.65rem;padding-bottom:.65rem;border-bottom:1px solid rgba(255,255,255,.05)}
+.im-row:last-of-type{border-bottom:none;margin-bottom:0}
+.im-key{font-family:'Share Tech Mono',monospace;font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);padding-top:.1rem}
+.im-val{font-size:.88rem;color:var(--tx);text-align:right;font-weight:500}
+.im-tags{display:flex;gap:.35rem;flex-wrap:wrap;justify-content:flex-end}
+.im-tag{font-size:.7rem;padding:.15rem .45rem;background:var(--gr2);border:1px solid var(--bd2);border-radius:8px;color:var(--ac3)}
+.im-actions{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.2rem}
+.im-close{position:absolute;top:1rem;right:1rem;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.1);color:var(--tx2);font-size:.9rem;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .18s}
+.im-close:hover{background:rgba(240,68,68,.2);border-color:rgba(240,68,68,.4);color:#f04545}
+
+/* title click zone on card */
+.cv-title{cursor:pointer}
+.cv-title:hover{color:var(--ac3)}
+
+/* ════════════════════════════════════════════════════
+   HOTKEY CHEATSHEET MODAL
+   ════════════════════════════════════════════════════ */
+#hk-modal{
+  position:fixed;inset:0;z-index:800;display:flex;align-items:center;justify-content:center;
+  background:rgba(0,0,0,.65);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  opacity:0;visibility:hidden;transition:opacity .25s,visibility .25s;padding:1rem;
+}
+#hk-modal.open{opacity:1;visibility:visible}
+.hk-box{
+  background:var(--glass-bg);border:1px solid var(--bd2);border-top:1px solid var(--glass-hi);
+  border-radius:var(--r2);box-shadow:0 32px 80px rgba(0,0,0,.7);
+  backdrop-filter:blur(28px);-webkit-backdrop-filter:blur(28px);
+  width:min(480px,95vw);padding:1.8rem;
+  animation:imIn .28s cubic-bezier(.34,1.56,.64,1);
+  position:relative;
+}
+.hk-title{font-family:'Cinzel',serif;font-weight:700;font-style:italic;font-size:1.25rem;background:var(--gr);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:1.2rem}
+.hk-grid{display:grid;grid-template-columns:1fr 1fr;gap:.45rem}
+.hk-row{display:flex;align-items:center;gap:.6rem;padding:.38rem 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.hk-row:last-child{border-bottom:none}
+.kbd{
+  font-family:'Share Tech Mono',monospace;font-size:.7rem;
+  padding:.18rem .45rem;
+  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);
+  border-bottom:2px solid rgba(255,255,255,.08);
+  border-radius:6px;color:var(--tx);white-space:nowrap;flex-shrink:0;
+}
+.hk-desc{font-size:.8rem;color:var(--tx2);flex:1}
+
+/* ════════════════════════════════════════════════════
+   OFFLINE / RETRY TOAST
+   ════════════════════════════════════════════════════ */
+#offline-bar{
+  position:fixed;top:0;left:0;right:0;z-index:9997;
+  background:linear-gradient(135deg,#7c0a02,#c0350a);
+  color:#fff;font-family:'DM Sans',sans-serif;font-size:.82rem;font-weight:600;
+  padding:.55rem 1.2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  transform:translateY(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);
+}
+#offline-bar.show{transform:translateY(0)}
+#offline-bar button{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:6px;padding:.25rem .65rem;font-size:.78rem;cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:600;transition:background .18s}
+#offline-bar button:hover{background:rgba(255,255,255,.3)}
+
+
+/* ═══════════════════════════════════════════════════════════
+   OPSG — CRT + ARCANE EFFECTS
+   (all safe: no html filter, no body pseudo-elements)
+   ═══════════════════════════════════════════════════════════ */
+
+
+
+
+
+  100%{transform:translateY(105vh);opacity:.1}
+
+
+/* 4. Phosphor flicker — on the #app container, not html */
+@keyframes crtFlicker{
+  0%,89%,91%,93%,95%,100%{opacity:1}
+  90%{opacity:.97}
+  92%{opacity:.98}
+  94%{opacity:.965}
+}
+#app.vis{opacity:1;animation:crtFlicker 10s ease-in-out infinite}
+
+/* 5. Phosphor glow on headings and logo */
+.hp-title,.pt,.ss-ttl,.gs-ttl,.cred-name,.im-title,.hk-title{
+  text-shadow:0 0 12px var(--ac2),0 0 28px var(--gl);
+}
+.ss-ttl{
+  text-shadow:
+    -2px 0 rgba(255,60,60,.4),
+    2px 0 rgba(60,220,255,.4),
+    0 0 20px var(--gl);
+}
+.logo{text-shadow:0 0 10px var(--ac2)}
+
+
+
+/* 7. Phosphor dot texture on glass panels */
+.glass::before,.hp-banner::before{
+  content:'';position:absolute;inset:0;border-radius:inherit;
+  pointer-events:none;z-index:0;
+  background-image:radial-gradient(circle,rgba(77,166,255,.04) 1px,transparent 1px);
+  background-size:4px 4px;
+  opacity:.6;
+}
+.glass{position:relative;overflow:hidden}
+.glass > *{position:relative;z-index:1}
+
+/* 8. Arcane afterglow on interactive elements */
+.np:hover,.b:hover{text-shadow:0 0 8px var(--ac2)}
+.np.on{text-shadow:0 0 12px var(--ac2),0 0 22px var(--gl2)}
+.ab:hover{text-shadow:0 0 6px var(--ac3)}
+
+/* 9. Arcane rune ornaments on dividers */
+.ph::after{
+  background:linear-gradient(90deg,transparent,var(--ac),var(--ac2),var(--ac3),transparent)!important;
+}
+
+
+
+/* 11. Screen glow around content area */
+#main{box-shadow:inset 0 0 80px rgba(26,111,255,.04)}
+
+/* 12. Wizard typewriter cursor color */
+.ss-tag{border-right-color:rgba(77,166,255,.7)!important}
+
+/* 13. CRT screen-off fade for splash exit */
+#ss.gone{
+  animation:crtOff .4s ease forwards!important;
+}
+@keyframes crtOff{
+  0%  {opacity:1;transform:scaleY(1)}
+  60% {opacity:.8;transform:scaleY(.008) scaleX(1.1)}
+  100%{opacity:0;transform:scaleY(0);visibility:hidden}
+}
+
+</style>
+</head>
+<body>
+
+<div id="ss" class="gone">
+  <div class="ss-orbs"><div class="ss-orb"></div><div class="ss-orb"></div><div class="ss-orb"></div><div class="ss-orb"></div><div class="ss-orb-loop"></div><div class="ss-orb-loop"></div></div>
+  <div class="ss-scan"></div><div class="ss-gl"></div>
+  <div class="ssc tl"></div><div class="ssc tr"></div><div class="ssc bl"></div><div class="ssc br"></div>
+  <div class="ss-eyebrow">OPSG</div>
+  <div class="ss-ttl">OPSG</div>
+  <div class="ss-sub">The best game launcher</div>
+  <div class="ss-bar"><div class="ss-fill"></div></div>
+  <div class="ss-tag">conjuring the arcane...</div>
+</div>
+
+<div id="topbar" class="done" style="transition: width 0.3s, opacity 0.4s; width: 0%;"></div>
+<div id="crt-scanlines"></div>
+<div id="crt-vignette"></div>
+<div id="crt-sweep"></div>
+<div id="offline-bar"><span>⚠️ You appear to be offline or a source failed to load.</span><button onclick="reloadGames()">↺ Retry</button></div>
+<div class="amb-orb"></div><div class="amb-orb"></div><div class="amb-orb"></div>
+<div id="aurora"><div class="aurora-blob ab1"></div><div class="aurora-blob ab2"></div><div class="aurora-blob ab3"></div></div>
+<canvas id="bgc" width="2560" height="1271"></canvas>
+
+<div id="app" class="vis">
+
+  <header id="hdr">
+    <div class="logo" onclick="showP('home')"><i class="lic">🧙</i>OPSG</div>
+    <nav class="nav" id="main-nav"><div id="nav-ink" style="left: 626.823px; width: 63.1667px; height: 32.7917px; top: 0px;"></div>
+      <button class="np on" id="npill-home" onclick="showP('home')">⚗ Hall</button>
+      <button class="np" id="npill-favs" onclick="showP('favs')">📕 Favorites</button>
+      <button class="np" id="npill-browser" onclick="showP('browser')">🌀 Browser</button>
+      <button class="np" id="npill-request" onclick="showP('request')">📜 Requests</button>
+      <button class="np" id="npill-docs" onclick="showP('docs')">📚 Sites</button>
+      <button class="np" id="npill-settings" onclick="showP('settings')">⚙ Settings</button>
+      <button class="np" id="npill-credits" onclick="showP('credits')">✦ Credits</button>
+    </nav>
+    <div class="hr">
+      <div class="sw" id="srch-wrap"><span class="si">⌕</span><input id="srch" type="text" placeholder="Search…" autocomplete="off"><div id="srch-suggestions"></div></div>
+      <div class="clk" id="clk">07:21:43 PM</div>
+      <div id="stag" class="stag" style="display:none">CLOAKED</div>
+      <button class="ib" id="bst" onclick="toggleStealth()" title="Cloak Spell">🕶️</button>
+      <button class="ib" onclick="toggleFS()" title="Fullscreen">⛶</button>
+      <button class="ib" onclick="showP('settings');scrollPanic()" title="Emergency Dispel">🚨</button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HOME -->
+    <section class="panel on" id="panel-home">
+      <!-- ═══ OFFICIAL HOMEPAGE BANNER ═══ -->
+      <div class="hp-banner">
+        <div class="hp-bg-glow"></div>
+        <div class="hp-scanlines"></div>
+        <!-- left: branding -->
+        <div class="hp-left">
+          <div class="hp-eyebrow">
+            <span class="hp-dot"></span>
+            <span id="hp-date">Monday, October 5, 2026</span>
+            <span class="hp-pipe">|</span>
+            <span>OPSG</span>
+          </div>
+          <h1 class="hp-title">OP<br><em>SG</em></h1>
+          <p class="hp-desc">The all-in-one game hub powered by GN-Math &amp; The Ultimate G4me Stash. Browse, play, and discover thousands of g4mes — all in your browser.</p>
+          <div class="hp-badges">
+            <div class="hp-badge"><span class="hp-badge-ico">📖</span><span>GN-Math</span></div>
+            <div class="hp-badge"><span class="hp-badge-ico">🕹️</span><span>The Untimate Game Stash</span></div>
+            <div class="hp-badge"><span class="hp-badge-ico">🔒</span><span>Cloak Spell</span></div>
+          </div>
+        </div>
+        <!-- right: live stats -->
+        <div class="hp-right">
+          <div class="hp-stat-card">
+            <div class="hp-stat-n" id="gcnt-total">3662</div>
+            <div class="hp-stat-l">Total G4mes</div>
+          </div>
+          <div class="hp-stat-card" id="gcnt-filter-wrap" style="display:none">
+            <div class="hp-stat-n" id="gcnt-filter">3662</div>
+            <div class="hp-stat-l">Showing</div>
+          </div>
+          <div class="hp-stat-card">
+            <div class="hp-stat-n" id="hp-clock-stat">07:21 PM</div>
+            <div class="hp-stat-l">Local Time</div>
+          </div>
+        </div>
+      </div>
+      <div class="fbar" id="fbar">
+        <div class="bg">
+          <button class="b on" data-s="id" onclick="setSort('id')">Default</button>
+          <button class="b" data-s="name" onclick="setSort('name')">A–Z</button>
+          <button class="b" data-s="namez" onclick="setSort('namez')">Z–A</button>
+          <button class="b" data-s="popular" onclick="setSort('popular')">🔥 Pop</button>
+          <button class="b" data-s="trendingMonth" onclick="setSort('trendingMonth')">📅 Month</button>
+          <button class="b" data-s="trendingWeek" onclick="setSort('trendingWeek')">📆 Week</button>
+          <button class="b" data-s="new" onclick="setSort('new')">🆕 New</button>
+          <button class="b" data-s="shuffle" onclick="setSort('shuffle')">🔀</button>
+        </div>
+        <div class="bg">
+          <button class="b on" data-v="grid" onclick="setView('grid')">⊞ Grid</button>
+          <button class="b" data-v="list" onclick="setView('list')">☰ List</button>
+        </div>
+        <div class="bg">
+          <button class="b on" data-sf="all" onclick="setSF('all')">All</button>
+          <button class="b" data-sf="gnmath" onclick="setSF('gnmath')">GN-Math</button>
+          <button class="b" data-sf="ugs" onclick="setSF('ugs')">UGS</button>
+        </div>
+        <select class="tsel" id="tsel" onchange="setTF(this.value)" style="display:none"><option value="">All Tags</option><option value="port">Port</option><option value="flash">Flash</option><option value="emulator">Emulator</option><option value="tools">Tools</option><option value="fnf">Fnf</option><option value="n64">N64</option><option value="gba">Gba</option><option value="nds">Nds</option><option value="nes">Nes</option><option value="psx">Psx</option><option value="dos">Dos</option></select>
+        <button class="b" onclick="randomGame()" title="Cast a random spell">🎲 Fortune</button>
+        <button class="b" onclick="showHKModal()" title="Keyboard shortcuts">⌨️</button>
+        <div class="size-slider-wrap"><label>SIZE</label><input type="range" class="csz" id="csz" min="0" max="2" step="1" value="1" oninput="setCardSize(this.value)"></div>
+      </div>
+      <!-- Recent Conjurations -->
+      <div class="rp-section" id="rp-section" style="display:none">
+        <div class="rp-label">🔮 Recent Conjurations</div>
+        <div class="rp-strip" id="rp-strip"></div>
+      </div>
+      <!-- Tag Cloud -->
+      <div class="tag-cloud" id="tag-cloud"></div>
+      <div id="gg"><div class="gc" style="animation-delay: 0s;">
+    <div class="cv">
+      <img alt="" loading="lazy" onerror="this.style.display='none'" src="./OPSG v1.5_files/dc.png">
+      
+      <div class="cv-grad"></div>
+      <div class="cv-src">GN-Math</div>
+      <div 
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="gnmath_-1" onclick="event.stopPropagation();toggleFav('gnmath_-1')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">[!] Suggest Games .Gg/d4c9vfywyu</div>
+      <div class="cf"><span class="cs">GN-Math</span><button class="fs" data-fid="gnmath_-1_lv" onclick="event.stopPropagation();toggleFav('gnmath_-1')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.025s; --mx: 76.3202278589075%; --my: -0.4452932336621455%;">
+    <div class="cv">
+      <img alt="" loading="lazy" onerror="this.style.display='none'" src="./OPSG v1.5_files/0.png">
+      
+      <div class="cv-grad"></div>
+      <div class="cv-src">GN-Math</div>
+      <div class="cv-title">Bowmasters</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="gnmath_0" onclick="event.stopPropagation();toggleFav('gnmath_0')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Bowmasters</div>
+      <div class="cf"><span class="cs">GN-Math</span><button class="fs" data-fid="gnmath_0_lv" onclick="event.stopPropagation();toggleFav('gnmath_0')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.05s; --mx: 94.1602030290925%; --my: 24.32523665484998%;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Altsingle</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_altsingle" onclick="event.stopPropagation();toggleFav('ugs_altsingle')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Altsingle</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_altsingle_lv" onclick="event.stopPropagation();toggleFav('ugs_altsingle')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.075s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl1</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl1" onclick="event.stopPropagation();toggleFav('ugs_cl1')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl1</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl1_lv" onclick="event.stopPropagation();toggleFav('ugs_cl1')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.1s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl100roomsofenemies</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl100RoomsOfEnemies" onclick="event.stopPropagation();toggleFav('ugs_cl100RoomsOfEnemies')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl100roomsofenemies</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl100RoomsOfEnemies_lv" onclick="event.stopPropagation();toggleFav('ugs_cl100RoomsOfEnemies')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.125s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl100in1nes</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl100in1nes" onclick="event.stopPropagation();toggleFav('ugs_cl100in1nes')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl100in1nes</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl100in1nes_lv" onclick="event.stopPropagation();toggleFav('ugs_cl100in1nes')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.15s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl10bullets</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl10bullets" onclick="event.stopPropagation();toggleFav('ugs_cl10bullets')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl10bullets</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl10bullets_lv" onclick="event.stopPropagation();toggleFav('ugs_cl10bullets')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.175s; --mx: 12.311637794939596%; --my: 60.67266813090835%;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl10minutestildawn</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl10minutestildawn" onclick="event.stopPropagation();toggleFav('ugs_cl10minutestildawn')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl10minutestildawn</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl10minutestildawn_lv" onclick="event.stopPropagation();toggleFav('ugs_cl10minutestildawn')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.2s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl10morebullets</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl10morebullets" onclick="event.stopPropagation();toggleFav('ugs_cl10morebullets')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl10morebullets</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl10morebullets_lv" onclick="event.stopPropagation();toggleFav('ugs_cl10morebullets')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.225s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl10yardfight</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl10yardfight" onclick="event.stopPropagation();toggleFav('ugs_cl10yardfight')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl10yardfight</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl10yardfight_lv" onclick="event.stopPropagation();toggleFav('ugs_cl10yardfight')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.25s; --mx: 67.15064051771185%; --my: 0.17122957768187425%;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl12minibattles</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl12minibattles" onclick="event.stopPropagation();toggleFav('ugs_cl12minibattles')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl12minibattles</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl12minibattles_lv" onclick="event.stopPropagation();toggleFav('ugs_cl12minibattles')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.275s; --mx: 63.88492405933124%; --my: 66.59128711981094%;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl13bones</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl13bones" onclick="event.stopPropagation();toggleFav('ugs_cl13bones')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl13bones</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl13bones_lv" onclick="event.stopPropagation();toggleFav('ugs_cl13bones')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.3s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl1942nes</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl1942nes" onclick="event.stopPropagation();toggleFav('ugs_cl1942nes')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl1942nes</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl1942nes_lv" onclick="event.stopPropagation();toggleFav('ugs_cl1942nes')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.325s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl1on1soccer</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl1on1soccer" onclick="event.stopPropagation();toggleFav('ugs_cl1on1soccer')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl1on1soccer</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl1on1soccer_lv" onclick="event.stopPropagation();toggleFav('ugs_cl1on1soccer')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.35s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl1v1lol</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl1v1lol" onclick="event.stopPropagation();toggleFav('ugs_cl1v1lol')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl1v1lol</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl1v1lol_lv" onclick="event.stopPropagation();toggleFav('ugs_cl1v1lol')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.375s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl1v1tennis</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl1v1tennis" onclick="event.stopPropagation();toggleFav('ugs_cl1v1tennis')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl1v1tennis</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl1v1tennis_lv" onclick="event.stopPropagation();toggleFav('ugs_cl1v1tennis')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.4s; --mx: 92.8410989796347%; --my: 66.33099086775586%;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl2048</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl2048" onclick="event.stopPropagation();toggleFav('ugs_cl2048')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl2048</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl2048_lv" onclick="event.stopPropagation();toggleFav('ugs_cl2048')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.425s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl2048cupcakes</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl2048cupcakes" onclick="event.stopPropagation();toggleFav('ugs_cl2048cupcakes')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl2048cupcakes</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl2048cupcakes_lv" onclick="event.stopPropagation();toggleFav('ugs_cl2048cupcakes')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.45s; --mx: 64.76432675896979%; --my: 8.021620042129058%;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl20smallmazes</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl20smallmazes" onclick="event.stopPropagation();toggleFav('ugs_cl20smallmazes')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl20smallmazes</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl20smallmazes_lv" onclick="event.stopPropagation();toggleFav('ugs_cl20smallmazes')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.475s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl234playergame</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl234playergame" onclick="event.stopPropagation();toggleFav('ugs_cl234playergame')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl234playergame</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl234playergame_lv" onclick="event.stopPropagation();toggleFav('ugs_cl234playergame')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl2dshooting</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl2Dshooting" onclick="event.stopPropagation();toggleFav('ugs_cl2Dshooting')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl2dshooting</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl2Dshooting_lv" onclick="event.stopPropagation();toggleFav('ugs_cl2Dshooting')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl2doom</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl2doom" onclick="event.stopPropagation();toggleFav('ugs_cl2doom')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl2doom</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl2doom_lv" onclick="event.stopPropagation();toggleFav('ugs_cl2doom')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3dash</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3dash" onclick="event.stopPropagation();toggleFav('ugs_cl3dash')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3dash</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3dash_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3dash')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3dasheditor</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3dasheditor" onclick="event.stopPropagation();toggleFav('ugs_cl3dasheditor')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3dasheditor</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3dasheditor_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3dasheditor')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3dpinballspacecadet</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3dpinballspacecadet" onclick="event.stopPropagation();toggleFav('ugs_cl3dpinballspacecadet')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3dpinballspacecadet</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3dpinballspacecadet_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3dpinballspacecadet')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3pandas</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3pandas" onclick="event.stopPropagation();toggleFav('ugs_cl3pandas')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3pandas</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3pandas_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3pandas')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3pandasbrazil</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3pandasbrazil" onclick="event.stopPropagation();toggleFav('ugs_cl3pandasbrazil')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3pandasbrazil</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3pandasbrazil_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3pandasbrazil')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3pandasfantasy</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3pandasfantasy" onclick="event.stopPropagation();toggleFav('ugs_cl3pandasfantasy')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3pandasfantasy</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3pandasfantasy_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3pandasfantasy')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3pandasjapan</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3pandasjapan" onclick="event.stopPropagation();toggleFav('ugs_cl3pandasjapan')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3pandasjapan</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3pandasjapan_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3pandasjapan')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3pandasnight</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3pandasnight" onclick="event.stopPropagation();toggleFav('ugs_cl3pandasnight')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3pandasnight</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3pandasnight_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3pandasnight')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl3slices2</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl3slices2" onclick="event.stopPropagation();toggleFav('ugs_cl3slices2')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl3slices2</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl3slices2_lv" onclick="event.stopPropagation();toggleFav('ugs_cl3slices2')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl40xescape</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl40xescape" onclick="event.stopPropagation();toggleFav('ugs_cl40xescape')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl40xescape</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl40xescape_lv" onclick="event.stopPropagation();toggleFav('ugs_cl40xescape')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl4thandgoal</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl4thandgoal" onclick="event.stopPropagation();toggleFav('ugs_cl4thandgoal')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl4thandgoal</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl4thandgoal_lv" onclick="event.stopPropagation();toggleFav('ugs_cl4thandgoal')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl500calibercontractz</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl500calibercontractz" onclick="event.stopPropagation();toggleFav('ugs_cl500calibercontractz')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl500calibercontractz</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl500calibercontractz_lv" onclick="event.stopPropagation();toggleFav('ugs_cl500calibercontractz')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl60secondsburgerrun</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl60secondsburgerrun" onclick="event.stopPropagation();toggleFav('ugs_cl60secondsburgerrun')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl60secondsburgerrun</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl60secondsburgerrun_lv" onclick="event.stopPropagation();toggleFav('ugs_cl60secondsburgerrun')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl60secondssantarun</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl60secondssantarun" onclick="event.stopPropagation();toggleFav('ugs_cl60secondssantarun')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl60secondssantarun</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl60secondssantarun_lv" onclick="event.stopPropagation();toggleFav('ugs_cl60secondssantarun')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl64in1nes</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl64in1nes" onclick="event.stopPropagation();toggleFav('ugs_cl64in1nes')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl64in1nes</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl64in1nes_lv" onclick="event.stopPropagation();toggleFav('ugs_cl64in1nes')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl8ballclassic</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl8ballclassic" onclick="event.stopPropagation();toggleFav('ugs_cl8ballclassic')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl8ballclassic</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl8ballclassic_lv" onclick="event.stopPropagation();toggleFav('ugs_cl8ballclassic')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl8ballpool</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl8ballpool" onclick="event.stopPropagation();toggleFav('ugs_cl8ballpool')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl8ballpool</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl8ballpool_lv" onclick="event.stopPropagation();toggleFav('ugs_cl8ballpool')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl9007199254740992</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl9007199254740992" onclick="event.stopPropagation();toggleFav('ugs_cl9007199254740992')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl9007199254740992</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl9007199254740992_lv" onclick="event.stopPropagation();toggleFav('ugs_cl9007199254740992')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl90in1nes</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl90in1nes" onclick="event.stopPropagation();toggleFav('ugs_cl90in1nes')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl90in1nes</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl90in1nes_lv" onclick="event.stopPropagation();toggleFav('ugs_cl90in1nes')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl99balls</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl99balls" onclick="event.stopPropagation();toggleFav('ugs_cl99balls')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl99balls</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl99balls_lv" onclick="event.stopPropagation();toggleFav('ugs_cl99balls')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cl99nightsitf</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_cl99nightsitf" onclick="event.stopPropagation();toggleFav('ugs_cl99nightsitf')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cl99nightsitf</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_cl99nightsitf_lv" onclick="event.stopPropagation();toggleFav('ugs_cl99nightsitf')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cla Walk In The Forest (V10)</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clA Walk in The Forest (v10)" onclick="event.stopPropagation();toggleFav('ugs_clA Walk in The Forest (v10)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cla Walk In The Forest (V10)</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clA Walk in The Forest (v10)_lv" onclick="event.stopPropagation();toggleFav('ugs_clA Walk in The Forest (v10)')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cladofai</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clADOFAI" onclick="event.stopPropagation();toggleFav('ugs_clADOFAI')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cladofai</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clADOFAI_lv" onclick="event.stopPropagation();toggleFav('ugs_clADOFAI')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cladarkroom</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clADarkRoom" onclick="event.stopPropagation();toggleFav('ugs_clADarkRoom')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cladarkroom</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clADarkRoom_lv" onclick="event.stopPropagation();toggleFav('ugs_clADarkRoom')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clacko S Mach Bike Challenge (V10)</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clAcko_s Mach Bike Challenge (v10)" onclick="event.stopPropagation();toggleFav('ugs_clAcko_s Mach Bike Challenge (v10)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clacko S Mach Bike Challenge (V10)</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clAcko_s Mach Bike Challenge (v10)_lv" onclick="event.stopPropagation();toggleFav('ugs_clAcko_s Mach Bike Challenge (v10)')">☆</button></div>
+    </div></div><div class="gc" style="animation-delay: 0.5s;">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cladventurecapatalist</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clAdventureCapatalist" onclick="event.stopPropagation();toggleFav('ugs_clAdventureCapatalist')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cladventurecapatalist</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clAdventureCapatalist_lv" onclick="event.stopPropagation();toggleFav('ugs_clAdventureCapatalist')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Claltered Beast</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clAltered Beast" onclick="event.stopPropagation();toggleFav('ugs_clAltered Beast')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Claltered Beast</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clAltered Beast_lv" onclick="event.stopPropagation();toggleFav('ugs_clAltered Beast')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clastrosdreamland</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clAstrosDreamland" onclick="event.stopPropagation();toggleFav('ugs_clAstrosDreamland')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clastrosdreamland</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clAstrosDreamland_lv" onclick="event.stopPropagation();toggleFav('ugs_clAstrosDreamland')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clawesomepirates</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clAwesomePirates" onclick="event.stopPropagation();toggleFav('ugs_clAwesomePirates')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clawesomepirates</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clAwesomePirates_lv" onclick="event.stopPropagation();toggleFav('ugs_clAwesomePirates')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clb3313</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clB3313" onclick="event.stopPropagation();toggleFav('ugs_clB3313')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clb3313</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clB3313_lv" onclick="event.stopPropagation();toggleFav('ugs_clB3313')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbfdibranches</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBFDIBranches" onclick="event.stopPropagation();toggleFav('ugs_clBFDIBranches')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbfdibranches</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBFDIBranches_lv" onclick="event.stopPropagation();toggleFav('ugs_clBFDIBranches')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbmx2</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBMX2" onclick="event.stopPropagation();toggleFav('ugs_clBMX2')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbmx2</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBMX2_lv" onclick="event.stopPropagation();toggleFav('ugs_clBMX2')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbtd1</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBTD1" onclick="event.stopPropagation();toggleFav('ugs_clBTD1')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbtd1</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBTD1_lv" onclick="event.stopPropagation();toggleFav('ugs_clBTD1')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbank Robbery</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBank Robbery" onclick="event.stopPropagation();toggleFav('ugs_clBank Robbery')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbank Robbery</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBank Robbery_lv" onclick="event.stopPropagation();toggleFav('ugs_clBank Robbery')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbig Time Butter Baron</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBig_Time_Butter_Baron" onclick="event.stopPropagation();toggleFav('ugs_clBig_Time_Butter_Baron')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbig Time Butter Baron</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBig_Time_Butter_Baron_lv" onclick="event.stopPropagation();toggleFav('ugs_clBig_Time_Butter_Baron')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbonanza Bros</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBonanza-Bros" onclick="event.stopPropagation();toggleFav('ugs_clBonanza-Bros')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbonanza Bros</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBonanza-Bros_lv" onclick="event.stopPropagation();toggleFav('ugs_clBonanza-Bros')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbountyofone</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBountyOfOne" onclick="event.stopPropagation();toggleFav('ugs_clBountyOfOne')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbountyofone</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBountyOfOne_lv" onclick="event.stopPropagation();toggleFav('ugs_clBountyOfOne')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbrawlstars</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBrawlstars" onclick="event.stopPropagation();toggleFav('ugs_clBrawlstars')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbrawlstars</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBrawlstars_lv" onclick="event.stopPropagation();toggleFav('ugs_clBrawlstars')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clbusterjam</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clBusterJam" onclick="event.stopPropagation();toggleFav('ugs_clBusterJam')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clbusterjam</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clBusterJam_lv" onclick="event.stopPropagation();toggleFav('ugs_clBusterJam')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clcartoonnetworktabletennisultimatetournament</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clCartoonNetworkTableTennisUltimateTournament" onclick="event.stopPropagation();toggleFav('ugs_clCartoonNetworkTableTennisUltimateTournament')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clcartoonnetworktabletennisultimatetournament</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clCartoonNetworkTableTennisUltimateTournament_lv" onclick="event.stopPropagation();toggleFav('ugs_clCartoonNetworkTableTennisUltimateTournament')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clceliasstupidromhack</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clCeliasStupidROMHack" onclick="event.stopPropagation();toggleFav('ugs_clCeliasStupidROMHack')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clceliasstupidromhack</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clCeliasStupidROMHack_lv" onclick="event.stopPropagation();toggleFav('ugs_clCeliasStupidROMHack')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clcelltosingularity</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clCellToSingularity" onclick="event.stopPropagation();toggleFav('ugs_clCellToSingularity')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clcelltosingularity</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clCellToSingularity_lv" onclick="event.stopPropagation();toggleFav('ugs_clCellToSingularity')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clchickencs</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clChickenCS" onclick="event.stopPropagation();toggleFav('ugs_clChickenCS')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clchickencs</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clChickenCS_lv" onclick="event.stopPropagation();toggleFav('ugs_clChickenCS')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clcircloo2</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clCircloO2" onclick="event.stopPropagation();toggleFav('ugs_clCircloO2')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clcircloo2</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clCircloO2_lv" onclick="event.stopPropagation();toggleFav('ugs_clCircloO2')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clcrystalcastles</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clCrystalCastles" onclick="event.stopPropagation();toggleFav('ugs_clCrystalCastles')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clcrystalcastles</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clCrystalCastles_lv" onclick="event.stopPropagation();toggleFav('ugs_clCrystalCastles')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cldknescollection</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clDKNESCollection(1)" onclick="event.stopPropagation();toggleFav('ugs_clDKNESCollection(1)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cldknescollection</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clDKNESCollection(1)_lv" onclick="event.stopPropagation();toggleFav('ugs_clDKNESCollection(1)')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cldknescollection</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clDKNESCollection" onclick="event.stopPropagation();toggleFav('ugs_clDKNESCollection')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cldknescollection</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clDKNESCollection_lv" onclick="event.stopPropagation();toggleFav('ugs_clDKNESCollection')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cldashmetry</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clDashmetry" onclick="event.stopPropagation();toggleFav('ugs_clDashmetry')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cldashmetry</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clDashmetry_lv" onclick="event.stopPropagation();toggleFav('ugs_clDashmetry')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cldigoutofprison</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clDigOutofPrison" onclick="event.stopPropagation();toggleFav('ugs_clDigOutofPrison')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cldigoutofprison</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clDigOutofPrison_lv" onclick="event.stopPropagation();toggleFav('ugs_clDigOutofPrison')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cldragonballzthelegacyofgoku</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clDragonBallZTheLegacyofGoku" onclick="event.stopPropagation();toggleFav('ugs_clDragonBallZTheLegacyofGoku')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cldragonballzthelegacyofgoku</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clDragonBallZTheLegacyofGoku_lv" onclick="event.stopPropagation();toggleFav('ugs_clDragonBallZTheLegacyofGoku')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cldragonquestix</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clDragonQuestIX" onclick="event.stopPropagation();toggleFav('ugs_clDragonQuestIX')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cldragonquestix</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clDragonQuestIX_lv" onclick="event.stopPropagation();toggleFav('ugs_clDragonQuestIX')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cldragonxclient</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clDragonxclient" onclick="event.stopPropagation();toggleFav('ugs_clDragonxclient')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cldragonxclient</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clDragonxclient_lv" onclick="event.stopPropagation();toggleFav('ugs_clDragonxclient')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraft Alpha 126 Offline</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraft-Alpha-126-Offline" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Alpha-126-Offline')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraft Alpha 126 Offline</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraft-Alpha-126-Offline_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Alpha-126-Offline')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraft Beta 1.3 Offline</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraft-Beta-1.3-Offline" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Beta-1.3-Offline')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraft Beta 1.3 Offline</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraft-Beta-1.3-Offline_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Beta-1.3-Offline')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraft Beta 13 Offline</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraft-Beta-13-Offline" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Beta-13-Offline')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraft Beta 13 Offline</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraft-Beta-13-Offline_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Beta-13-Offline')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraft Indev Offline</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraft-Indev-Offline (1)" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Indev-Offline (1)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraft Indev Offline</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraft-Indev-Offline (1)_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Indev-Offline (1)')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraft Indev Offline</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraft-Indev-Offline(1)" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Indev-Offline(1)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraft Indev Offline</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraft-Indev-Offline(1)_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Indev-Offline(1)')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraft Indev Offline</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraft-Indev-Offline(2)" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Indev-Offline(2)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraft Indev Offline</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraft-Indev-Offline(2)_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Indev-Offline(2)')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraft Indev Offline</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraft-Indev-Offline" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Indev-Offline')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraft Indev Offline</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraft-Indev-Offline_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraft-Indev-Offline')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraftl 19 V0 7 0 Offline Signed</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraftL_19_v0_7_0_Offline_Signed(1)" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraftL_19_v0_7_0_Offline_Signed(1)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraftl 19 V0 7 0 Offline Signed</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraftL_19_v0_7_0_Offline_Signed(1)_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraftL_19_v0_7_0_Offline_Signed(1)')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Cleaglercraftl 19 V0 7 0 Offline Signed</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clEaglercraftL_19_v0_7_0_Offline_Signed" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraftL_19_v0_7_0_Offline_Signed')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Cleaglercraftl 19 V0 7 0 Offline Signed</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clEaglercraftL_19_v0_7_0_Offline_Signed_lv" onclick="event.stopPropagation();toggleFav('ugs_clEaglercraftL_19_v0_7_0_Offline_Signed')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clff3</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFF3" onclick="event.stopPropagation();toggleFav('ugs_clFF3')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clff3</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFF3_lv" onclick="event.stopPropagation();toggleFav('ugs_clFF3')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clffsonic1</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFFsonic1" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic1')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clffsonic1</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFFsonic1_lv" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic1')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clffsonic2</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFFsonic2" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic2')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clffsonic2</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFFsonic2_lv" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic2')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clffsonic3</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFFsonic3" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic3')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clffsonic3</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFFsonic3_lv" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic3')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clffsonic4</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFFsonic4" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic4')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clffsonic4</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFFsonic4_lv" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic4')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clffsonic5</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFFsonic5" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic5')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clffsonic5</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFFsonic5_lv" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic5')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clffsonic61</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFFsonic61" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic61')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clffsonic61</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFFsonic61_lv" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic61')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clffsonic62</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFFsonic62" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic62')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clffsonic62</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFFsonic62_lv" onclick="event.stopPropagation();toggleFav('ugs_clFFsonic62')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clfifa07</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFIFA07" onclick="event.stopPropagation();toggleFav('ugs_clFIFA07')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clfifa07</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFIFA07_lv" onclick="event.stopPropagation();toggleFav('ugs_clFIFA07')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clfifa10</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFIFA10" onclick="event.stopPropagation();toggleFav('ugs_clFIFA10')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clfifa10</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFIFA10_lv" onclick="event.stopPropagation();toggleFav('ugs_clFIFA10')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clfifa11</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFIFA11" onclick="event.stopPropagation();toggleFav('ugs_clFIFA11')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clfifa11</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFIFA11_lv" onclick="event.stopPropagation();toggleFav('ugs_clFIFA11')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clfifa2000</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFIFA2000(1)" onclick="event.stopPropagation();toggleFav('ugs_clFIFA2000(1)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clfifa2000</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFIFA2000(1)_lv" onclick="event.stopPropagation();toggleFav('ugs_clFIFA2000(1)')">☆</button></div>
+    </div></div><div class="gc">
+    <div class="cv">
+      
+      <div class="cfb">🎮</div>
+      <div class="cv-grad"></div>
+      <div class="cv-src">UGS</div>
+      <div class="cv-title">Clfifa2000</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs" data-fid="ugs_clFIFA2000(2)" onclick="event.stopPropagation();toggleFav('ugs_clFIFA2000(2)')" title="Add to favorites">☆</button>
+    </div>
+    <div class="cb">
+      <div class="ct">Clfifa2000</div>
+      <div class="cf"><span class="cs">UGS</span><button class="fs" data-fid="ugs_clFIFA2000(2)_lv" onclick="event.stopPropagation();toggleFav('ugs_clFIFA2000(2)')">☆</button></div>
+    </div></div></div>
+      <div id="lsent"></div>
+    </section>
+
+    <!-- FAVORITES -->
+    <section class="panel" id="panel-favs">
+      <div class="ph"><div class="pt">📕 Favorites</div><div class="ps">Your bound spells</div></div>
+      <div id="fg" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1.25rem"></div>
+    </section>
+
+    <!-- BROWSER -->
+    <section class="panel" id="panel-browser">
+      <div class="ph"><div class="pt">Cloaking Portal</div><div class="ps">Open the invisible gateway</div></div>
+      <div class="glass">
+        <div class="bh">
+          <span class="bico">🌐</span>
+          <h3>Arcane Portal</h3>
+          <p>Opens through an invisible gateway — the address bar shows nothing suspicious.</p>
+          <div class="br">
+            <button class="ab pr" onclick="openBrwBlank()">🚀 Open in about:blank</button>
+            <button class="ab" onclick="toggleInlineBrw()">📌 Inline Mode</button>
+          </div>
+        </div>
+      </div>
+      <div id="ibw" style="display:none;margin-top:1rem">
+        <div class="dfr"><iframe id="ibf" src="./OPSG v1.5_files/saved_resource.html"></iframe></div>
+      </div>
+    </section>
+
+    <!-- REQUEST -->
+    <section class="panel" id="panel-request">
+      <div class="ph"><div class="pt">Spell Request</div><div class="ps">Submit a spell to the arcane vault</div></div>
+      <div style="border-radius:var(--r2);overflow:hidden;border:1px solid rgba(255,255,255,.07);background:var(--glass-bg);box-shadow:var(--glass-shadow)">
+        <iframe src="./OPSG v1.5_files/viewform.html" width="100%" height="720" frameborder="0" marginheight="0" marginwidth="0" style="display:block;background:transparent" loading="lazy">Loading…</iframe>
+      </div>
+    </section>
+
+    <!-- DOCS -->
+    <section class="panel" id="panel-docs">
+      <div class="ph"><div class="pt">Wizard Docs</div></div>
+      <div class="dtbs">
+        <button class="b on shimmer" data-doc="nexus" onclick="switchDoc('nexus')">📡 OPSG</button>
+      </div>
+      <div class="dfr"><iframe id="dfrm" src="./OPSG v1.5_files/edit.html" allowfullscreen=""></iframe></div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="panel" id="panel-settings">
+      <div class="ph"><div class="pt">⚙ Sanctum</div></div>
+      <div class="sg">
+        <div class="glass">
+          <div class="sc-hdr"><div class="sc-ico">🎨</div><div class="sl">Theme</div></div>
+          <div class="sws">
+            <div class="sw2 sw-wiz on" data-tv="wizard" onclick="setTheme('wizard')" title="Wizard Blue (Default)"></div>
+            <div class="sw2 sw-d" data-tv="purple" onclick="setTheme('purple')" title="Void Purple"></div>
+            <div class="sw2 sw-b" data-tv="blue" onclick="setTheme('blue')" title="Void Blue"></div>
+            <div class="sw2 sw-r" data-tv="red" onclick="setTheme('red')" title="Blood Moon"></div>
+            <div class="sw2 sw-g" data-tv="green" onclick="setTheme('green')" title="Emerald"></div>
+            <div class="sw2 sw-a" data-tv="amber" onclick="setTheme('amber')" title="Solar Flare"></div>
+            <div class="sw2 sw-c" data-tv="custom" onclick="setTheme('custom')" title="Custom"></div>
+          </div>
+          <div id="ccols" style="display:none;margin-top:.8rem">
+            <div class="sd">Custom accent colors</div>
+            <div class="cr"><span class="cl">Primary</span><input type="color" id="ca" value="#7c3aed" oninput="applyCustom()"><input type="color" id="ca2" value="#a855f7" oninput="applyCustom()"></div>
+            <div class="cr"><span class="cl">Background</span><input type="color" id="cbg" value="#020208" oninput="applyCustom()"></div>
+          </div>
+        </div>
+        <div class="glass">
+          <div class="sc-hdr"><div class="sc-ico">🎮</div><div class="sl">Tome Sources</div></div>
+          <div class="srl">
+            <div class="sri"><span>🎮 📖 GN-Math </span><div class="tog on" id="tg-gnmath" onclick="toggleSrc('gnmath')"></div></div>
+            <div class="sri"><span>🕹️ The Ultimate Game Stash</span><div class="tog on" id="tg-ugs" onclick="toggleSrc('ugs')"></div></div>
+          </div>
+          <button class="ab" onclick="reloadGames()" style="margin-top:.95rem;width:100%">↺ Recast All Spells</button>
+        </div>
+        <div class="glass">
+          <div class="sc-hdr"><div class="sc-ico">🕶️</div><div class="sl">Cloak Enchantment</div></div>
+          <div class="tr"><span class="trt">Enable Cloak Spell</span><div class="tog" id="tg-stealth" onclick="toggleStealth()"></div></div>
+          <div style="margin-top:.95rem">
+            <div class="sd">Tab name while cloaked</div>
+            <input class="si2" id="stitle" value="Google Classroom - Math HW" style="margin-bottom:.58rem">
+            <div class="sd">Favicon URL</div>
+            <input class="si2" id="sfav" value="https://www.google.com/favicon.ico">
+          </div>
+        </div>
+        <div class="glass" id="psec">
+          <div class="sc-hdr"><div class="sc-ico">🚨</div><div class="sl">Emergency bind</div></div>
+          <button class="ab" onclick="rebindPanic()" style="margin-bottom:.8rem;width:100%">Rebind: <b id="pdisp">`</b></button>
+          <div class="sd">Redirect URL</div>
+          <input class="si2" id="purl" value="https://www.google.com" style="margin-bottom:.8rem">
+          <div class="tr"><span class="trt">Open spells via portal</span><div class="tog on" id="tg-blank" onclick="toggleSet('ablank')"></div></div>
+          <div class="tr"><span class="trt">Focus mode by default</span><div class="tog" id="tg-theater" onclick="toggleSet('theater')"></div></div>
+        </div>
+        <div class="glass">
+          <div class="sc-hdr"><div class="sc-ico">💾</div><div class="sl">Rune Memory</div></div>
+          <div class="sd" style="margin-bottom:.9rem">Export or import all rune memory — cookies, localStorage, IndexedDB, caches.</div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+            <button class="ab pr" onclick="saveData()">💾 Export</button>
+            <label class="ab" style="cursor:pointer">📂 Import<input type="file" accept=".data" style="display:none" onchange="loadData(event)"></label>
+          </div>
+        </div>
+        <div class="glass">
+          <div class="sc-hdr"><div class="sc-ico">🔗</div><div class="sl">Custom Tome Source</div></div>
+          <div class="sd">Paste a custom zones.json URL to load additional games.</div>
+          <input class="si2" id="custom-src-url" placeholder="https://…/zones.json" style="margin-bottom:.65rem">
+          <div style="display:flex;gap:.5rem">
+            <button class="ab pr" onclick="loadCustomSrc()" style="flex:1">Load Source</button>
+            <button class="ab" onclick="clearCustomSrc()">Clear</button>
+          </div>
+        </div>
+        <div class="glass">
+          <div class="sc-hdr"><div class="sc-ico">👤</div><div class="sl">Profile</div></div>
+          <div class="sd">Export your wizard profile — theme, favorites, settings — as one file. Import on another device.</div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap">
+            <button class="ab pr" onclick="exportProfile()">⬆ Export Scroll</button>
+            <label class="ab" style="cursor:pointer">⬇ Import Scroll<input type="file" accept=".wizard" style="display:none" onchange="importProfile(event)"></label>
+          </div>
+        </div>
+        <div class="glass">
+          <div class="sc-hdr"><div class="sc-ico">ℹ️</div><div class="sl">About</div></div>
+          <p style="font-size:.84rem;color:var(--tx2);line-height:1.9;font-weight:300">
+            <strong style="color:var(--ac2);font-weight:600">OPSG</strong> — OPSG Edition<br>
+            GN-Math · The Ultimate Game Stash<br><br>
+            <a href="https://docs.google.com/document/d/10qlDebKyFqSv4JFjKSml5tl2GEqouKl9bPe5aRGp3Sk/edit?usp=sharing" target="_blank" style="color:var(--ac2);text-decoration:underline">📡 OPSG</a><br>
+            <a href="https://docs.google.com/document/d/100c3NRCEMYaBkW_I0Kggh_dkmOndXyLiYiaHjEuZibM/edit?usp=sharing" target="_blank" style="color:var(--ac2);text-decoration:underline">🎬 The Arcane Archive</a><br><br>
+            <span style="color:var(--tx3);font-family:'Share Tech Mono',monospace;font-size:.68rem">v3.3 · Calamity Build</span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CREDITS -->
+    <section class="panel" id="panel-credits">
+      <div class="ph"><div class="pt">✦ Coven</div><div class="ps">The people &amp; sources behind OPSG</div></div>
+      <div class="cred-grid">
+        <div class="cred-card owner-card">
+          <div class="cred-crown">👑</div>
+          <div class="cred-role">Owner</div>
+          <div class="cred-name">OPSG</div>
+          <div class="cred-divider"></div>
+          <div class="cred-bio">Former owner of <span class="cred-hl">Crimsxn</span> / <span class="cred-hl">M3T4L</span> and worked for <span class="cred-hl">Chillzone</span>.</div>
+          <div class="cred-projs-label">Current Projects</div>
+          <div class="cred-projs">
+            <div class="cred-proj">🎬 Calamity Nexus</div>
+            <div class="cred-proj">📡 OPSG</div>
+          </div>
+          <div class="cred-tagline">The ultimate place for school device gaming</div>
+        </div>
+        <div class="cred-card src-card">
+          <div class="cred-crown">🎮</div>
+          <div class="cred-role">Games Source</div>
+          <div class="cred-name">GN-Math</div>
+          <div class="cred-divider"></div>
+          <div class="cred-bio">Math-focused game collection. Hosted on GitHub, served via jsDelivr CDN with popularity stats.</div>
+          <div class="cred-projs-label">Provides</div>
+          <div class="cred-projs">
+            <div class="cred-proj">📦 zones.json game index</div>
+            <div class="cred-proj">🖼️ Cover images</div>
+            <div class="cred-proj">📊 Popularity stats</div>
+          </div>
+          <a class="cred-link" href="https://gn-math.dev/" target="_blank">gn-math.dev ↗</a>
+        </div>
+        <div class="cred-card src-card">
+          <div class="cred-crown">🕹️</div>
+          <div class="cred-role">Games Source</div>
+          <div class="cred-name">UGS</div>
+          <div class="cred-divider"></div>
+          <div class="cred-bio">The Grand Stash — self-contained single-file HTML games via jsDelivr CDN.</div>
+          <div class="cred-projs-label">Provides</div>
+          <div class="cred-projs">
+            <div class="cred-proj">📄 Single-file HTML games</div>
+            <div class="cred-proj">🔗 CDN-hosted assets</div>
+          </div>
+          <a class="cred-link" href="https://github.com/bubbls/ugs-singlefile" target="_blank">github.com/bubbls ↗</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- GAME INFO MODAL -->
+<div id="info-modal">
+  <div class="im-box" id="im-box">
+    <button class="im-close" onclick="closeInfoModal()">✕</button>
+    <div id="im-cover-area"></div>
+    <div class="im-body">
+      <div class="im-title" id="im-title">—</div>
+      <div class="im-src" id="im-src">—</div>
+      <div id="im-rows"></div>
+      <div class="im-actions">
+        <button class="ab pr" id="im-play-btn">▶ Play Now</button>
+        <button class="ab" id="im-blank-btn">🔮 Portal</button>
+        <button class="ab" id="im-fav-btn">☆ Favorite</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HOTKEY MODAL -->
+<div id="hk-modal">
+  <div class="hk-box">
+    <button class="im-close" onclick="document.getElementById('hk-modal').classList.remove('open')">✕</button>
+    <div class="hk-title">Arcane Shortcuts</div>
+    <div class="hk-grid">
+      <div class="hk-row"><span class="kbd">Esc</span><span class="hk-desc">Close game / modal</span></div>
+      <div class="hk-row"><span class="kbd">F</span><span class="hk-desc">Fullscreen</span></div>
+      <div class="hk-row"><span class="kbd">R</span><span class="hk-desc">Random game</span></div>
+      <div class="hk-row"><span class="kbd">/ </span><span class="hk-desc">Focus search</span></div>
+      <div class="hk-row"><span class="kbd">T</span><span class="hk-desc">Focus mode (in game)</span></div>
+      <div class="hk-row"><span class="kbd">S</span><span class="hk-desc">Shuffle games</span></div>
+      <div class="hk-row"><span class="kbd" id="hk-panic-disp">`</span><span class="hk-desc">Panic key</span></div>
+      <div class="hk-row"><span class="kbd">?</span><span class="hk-desc">This cheatsheet</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- GAME VIEWER -->
+<div id="gv">
+  <div id="gs">
+    <div class="gs-gl"></div>
+    <div class="gs-ttl">OPSG</div>
+    <div class="gs-sub">Launching game...</div>
+    <div class="gs-bar"><div class="gs-fill"></div></div>
+  </div>
+  <div class="vh">
+    <button class="vb-close" onclick="closeGame()">✕ Close</button>
+    <div class="vt" id="vwt">—</div>
+    <div class="vh-acts">
+      <button class="vb" onclick="openNewTab()">✦ New Window</button>
+      <button class="vb" onclick="openBlank()">🔮 Portal</button>
+      <div class="vh-sep"></div>
+      <button class="vb" onclick="dlGame()">📜 Inscribe</button>
+      <div class="vh-sep"></div>
+      <button class="vb" onclick="toggleTheater()">🌙 Focus</button>
+      <button class="vb" onclick="fsGame()">⛶ Expand</button>
+    </div>
+  </div>
+  <div class="vbd"><iframe id="gf" src="./OPSG v1.5_files/saved_resource(1).html" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-presentation" allowfullscreen=""></iframe></div>
+</div>
+
+<div id="tsts"></div>
+
+<script>
+'use strict';
+const CFG={theme:'wizard',panicKey:'`',panicUrl:'https://www.google.com',stealthTitle:'Google Classroom - Math HW',stealthFav:'https://www.google.com/favicon.ico',ablank:true,theater:false,sources:{gnmath:true,ugs:true}};
+const ST={games:[],visible:[],rendered:0,PAGE:48,favs:[],sort:'id',view:'grid',srcF:'all',tagF:'',search:'',stealth:false,cur:null,rebinding:false};
+function saveAll(){try{localStorage.setItem('ud_cfg',JSON.stringify(CFG));localStorage.setItem('ud_favs',JSON.stringify(ST.favs))}catch(e){}}
+function loadAll(){try{Object.assign(CFG,JSON.parse(localStorage.getItem('ud_cfg')||'{}'));ST.favs=JSON.parse(localStorage.getItem('ud_favs')||'[]')}catch(e){}}
+
+const GNM={
+  zonesUrls:["ttps://cdn.jsdelivr.net/gh/freebuisness/assets@main/zones.json","https://cdn.jsdelivr.net/gh/freebuisness/assets@latest/zones.json","https://cdn.jsdelivr.net/gh/freebuisness/assets@master/zones.json","https://cdn.jsdelivr.net/gh/freebuisness/assets/zones.json"],
+  coverURL:"https://cdn.jsdelivr.net/gh/freebuisness/covers@main",
+  htmlURL:"https://cdn.jsdelivr.net/gh/freebuisness/html@main",
+  zonesURL:null,pop:{year:{},month:{},week:{},day:{}},rawZones:[],
+  async resolveURL(){
+    this.zonesURL=this.zonesUrls[Math.floor(Math.random()*this.zonesUrls.length)];
+    try{const sr=await fetch("https://api.github.com/repos/freebuisness/assets/commits?t="+Date.now());if(sr.status===200){const j=await sr.json();const sha=j[0]?.sha;if(sha){this.zonesURL=`https://cdn.jsdelivr.net/gh/freebuisness/assets@${sha}/zones.json`;return}}}catch(e){}
+    try{const sr2=await fetch("https://raw.githubusercontent.com/%67%6e%2d%6d%61%74%68/xml/refs/heads/main/sha.txt?t="+Date.now());if(sr2.status===200){const sha=(await sr2.text()).trim();if(sha)this.zonesURL=`https://cdn.jsdelivr.net/gh/freebuisness/assets@${sha}/zones.json`}}catch(e){}
+  },
+  async fetchPop(period){try{const r=await fetch(`https://cdn.jsdelivr.net/gh/freebuisness/assets@${sha}/zones.json`);const d=await r.json();d.forEach(f=>{const m=f.name.match(/\/(\d+)\.html$/);if(m)this.pop[period][parseInt(m[1])]=f.hits?.total??0})}catch(e){}},
+  getPop(id,period){return this.pop[period]?.[id]??0},
+  async fetch(){
+    await this.resolveURL();
+    const r=await fetch(this.zonesURL+"?t="+Date.now());
+    if(!r.ok)throw new Error('GN-Math zones fetch failed');
+    const zones=await r.json();
+    this.rawZones=zones;
+    Promise.all([this.fetchPop('year'),this.fetchPop('month'),this.fetchPop('week'),this.fetchPop('day')]).then(()=>{if(['popular','trendingMonth','trendingWeek'].includes(ST.sort))applyFilters()});
+    const tags=new Set();
+    zones.forEach(z=>{if(Array.isArray(z.special))z.special.forEach(t=>tags.add(t))});
+    const sel=document.getElementById('tsel');
+    tags.forEach(t=>{const o=document.createElement('option');o.value=t;o.textContent=t.charAt(0).toUpperCase()+t.slice(1);sel.appendChild(o)});
+    return zones.map(z=>({_z:z,id:'gnmath_'+z.id,numId:z.id,title:toTC(z.name||String(z.id)),_url:z.url,_cov:z.cover,cover:z.cover?z.cover.replace('{COVER_URL}',this.coverURL).replace('{HTML_URL}',this.htmlURL):null,source:'gnmath',srcLabel:'GN-Math',tags:z.special||[],featured:!!z.featured,author:z.author||null,authorLink:z.authorLink||null})).filter(g=>g.title&&g.title.trim());
+  },
+  resolveURL2(g){if(g._url&&g._url.startsWith('http'))return{type:'ext',url:g._url};return{type:'fetch',url:g._url.replace('{COVER_URL}',this.coverURL).replace('{HTML_URL}',this.htmlURL)}},
+  async writeToFrame(g,frame){
+    const res=this.resolveURL2(g);
+    if(res.type==='ext'){window.open(res.url,'_blank');return false}
+    const html=await fetch(res.url+"?t="+Date.now()).then(r2=>r2.text());
+    const doc=frame.contentDocument||frame.contentWindow?.document;
+    if(!doc)throw new Error('No frame document');
+    doc.open();doc.write(html);doc.close();
+    doc.querySelectorAll('script').forEach(old=>{const ns=document.createElement('script');old.src?ns.src=old.src:ns.textContent=old.textContent;doc.body?.appendChild(ns)});
+    return true;
+  }
+};
+
+const UGS={
+  base:'https://cdn.jsdelivr.net/gh/bubbls/ugs-singlefile@main/UGS-Files',repo:'bubbls/ugs-singlefile',
+
+  _makeGame(filename){
+    const name=filename.replace(/\.html$/i,'');
+    // Encode each char that isn't URL-safe so filenames with spaces/parens/etc work
+    const encoded=name.split('').map(c=>/[A-Za-z0-9\-._~]/.test(c)?c:encodeURIComponent(c)).join('');
+    const url=`${this.base}/${encoded}.html`;
+    const title=toTC(name.replace(/[-_]/g,' ').replace(/\s*\(\d+\)\s*$/,'').trim());
+    return{id:'ugs_'+name,numId:null,title,_url:url,cover:null,source:'ugs',srcLabel:'UGS',tags:[],featured:false};
+  },
+
+  // Strategy 1: jsDelivr flat API — paginates automatically by requesting all files
+  // jsDelivr returns up to 1000 files per response; we page until we get them all
+  async _tryJsdelivr(){
+    const bases=[
+      `https://data.jsdelivr.com/v1/packages/gh/${this.repo}@main`,
+      `https://data.jsdelivr.com/v1/packages/gh/${this.repo}@latest`,
+    ];
+    for(const base of bases){
+      try{
+        // First try the flat structure endpoint — returns ALL files in one shot
+        const r=await fetch(base+'?structure=flat');
+        if(!r.ok)continue;
+        const d=await r.json();
+        const files=(d.files||[])
+          .map(f=>typeof f==='string'?f:(f.name||''))
+          .filter(n=>n.startsWith('/UGS-Files/')&&n.endsWith('.html'))
+          .map(n=>n.replace('/UGS-Files/',''));
+        if(files.length>0){console.log(`[UGS] jsDelivr flat: ${files.length} files`);return files;}
+      }catch(e){console.warn('[UGS] jsDelivr flat attempt failed:',e);}
+    }
+    return null;
+  },
+
+  // Strategy 2: GitHub Contents API — hard cap at 1000 per request.
+  // For >1000 files we must use the tree API instead, so this is only a fallback
+  // when the tree is unavailable.
+  async _tryContents(){
+    // GitHub Contents API returns max 1000 items — not enough for 2000+ games.
+    // Use pagination: per_page=100 & page=N
+    const allFiles=[];
+    let page=1;
+    while(true){
+      const r=await fetch(`https://api.github.com/repos/${this.repo}/contents/UGS-Files?per_page=100&page=${page}&t=${Date.now()}`);
+      if(!r.ok)break;
+      const d=await r.json();
+      if(!Array.isArray(d)||d.length===0)break;
+      allFiles.push(...d.filter(f=>f.type==='file'&&f.name.endsWith('.html')).map(f=>f.name));
+      if(d.length<100)break; // last page
+      page++;
+      if(page>30)break; // safety: max 3000 files
+    }
+    if(allFiles.length>0){console.log(`[UGS] Contents API: ${allFiles.length} files`);return allFiles;}
+    return null;
+  },
+
+  // Strategy 3: GitHub git/trees recursive — best for large repos.
+  // If truncated=true the API couldn't fit everything; we fall back to Contents pagination above.
+  async _tryTree(){
+    const r=await fetch(`https://api.github.com/repos/${this.repo}/git/trees/main?recursive=1&t=${Date.now()}`);
+    if(!r.ok)return null;
+    const d=await r.json();
+    if(d.truncated){
+      console.warn('[UGS] Tree API truncated — falling back to Contents pagination');
+      return null;
+    }
+    const files=(d.tree||[])
+      .filter(f=>f.path?.startsWith('UGS-Files/')&&f.path.endsWith('.html'))
+      .map(f=>f.path.replace('UGS-Files/',''));
+    if(files.length>0){console.log(`[UGS] Tree API: ${files.length} files`);return files;}
+    return null;
+  },
+
+  async fetch(){
+    let names=null;
+    // Try strategies in order — jsDelivr is preferred (no rate limit)
+    try{names=await this._tryJsdelivr()}catch(e){console.warn('[UGS] jsDelivr failed:',e)}
+    if(!names||!names.length){
+      // Tree first (single request, handles large repos), then Contents pagination
+      try{names=await this._tryTree()}catch(e){console.warn('[UGS] Tree failed:',e)}
+    }
+    if(!names||!names.length){
+      try{names=await this._tryContents()}catch(e){console.warn('[UGS] Contents failed:',e)}
+    }
+    if(!names||!names.length)throw new Error('All UGS fetch strategies failed');
+    console.log(`[UGS] Total games: ${names.length}`);
+    return names.map(n=>this._makeGame(n));
+  }
+};
+
+function toTC(s){return s.replace(/\w\S*/g,t=>t.charAt(0).toUpperCase()+t.slice(1).toLowerCase())}
+function toast(msg,ms=2500){const tc=document.getElementById('tsts');const el=document.createElement('div');el.className='tst';el.textContent=msg;tc.appendChild(el);setTimeout(()=>{el.classList.add('out');setTimeout(()=>el.remove(),230)},ms)}
+
+/* ── BACKGROUND CANVAS + CURSOR TRAIL ── */
+const bgc=document.getElementById('bgc');const bx=bgc.getContext('2d');
+let BW,BH,bMx=0,bMy=0,bLast=0,nCvs=null;let bPs=[],bHxs=[];
+
+/* cursor trail — ring of fading dots following the mouse */
+
+function bResize(){BW=bgc.width=window.innerWidth;BH=bgc.height=window.innerHeight}
+
+class BP{
+  constructor(init){this.reset(init)}
+  reset(init){this.x=(Math.random()-.5)*1800;this.y=(Math.random()-.5)*1800;this.z=init?Math.random()*2000:2000;this.vz=-(0.38+Math.random()*.85);this.r=Math.random()*1.4+.22;const p=Math.random();this.col=p>.7?'#a855f7':p>.45?'#7c3aed':p>.26?'#c084fc':'#fff'}
+  tick(){this.x+=(bMx/BW-.5)*.28;this.y+=(bMy/BH-.5)*.2;this.z+=this.vz;if(this.z<=1)this.reset(false)}
+  draw(){const fov=380,sc=fov/this.z,px=this.x*sc+BW/2,py=this.y*sc+BH/2;if(px<-8||px>BW+8||py<-8||py>BH+8){this.reset(false);return}const sz=this.r*sc,a=Math.min(1,(2000-this.z)/580)*.62;bx.globalAlpha=a;bx.fillStyle=this.col;bx.beginPath();bx.arc(px,py,Math.max(.2,sz),0,Math.PI*2);bx.fill()}
+}
+
+class BH2{
+  constructor(){this.x=Math.random()*BW;this.y=Math.random()*BH;this.s=Math.random()*52+14;this.rot=Math.random()*Math.PI*2;this.rs=(Math.random()-.5)*.0055;this.vx=(Math.random()-.5)*.16;this.vy=(Math.random()-.5)*.13;this.a=Math.random()*.048+.011}
+  tick(){this.x+=this.vx;this.y+=this.vy;this.rot+=this.rs;if(this.x<-90)this.x=BW+90;if(this.x>BW+90)this.x=-90;if(this.y<-90)this.y=BH+90;if(this.y>BH+90)this.y=-90}
+  draw(){bx.save();bx.translate(this.x,this.y);bx.rotate(this.rot);bx.globalAlpha=this.a;bx.strokeStyle='#7c3aed';bx.lineWidth=1;bx.beginPath();for(let i=0;i<6;i++){const a=i/6*Math.PI*2;i?bx.lineTo(Math.cos(a)*this.s,Math.sin(a)*this.s):bx.moveTo(Math.cos(a)*this.s,Math.sin(a)*this.s)}bx.closePath();bx.stroke();bx.restore()}
+}
+
+function buildNebula(){
+  nCvs=document.createElement('canvas');nCvs.width=BW;nCvs.height=BH;
+  const nc=nCvs.getContext('2d');
+  [{x:.15,y:.2,r:.38,c:'rgba(124,58,237,0.05)'},{x:.82,y:.68,r:.42,c:'rgba(168,85,247,0.04)'},{x:.5,y:.5,r:.55,c:'rgba(45,27,105,0.12)'},{x:.25,y:.75,r:.3,c:'rgba(192,132,252,0.03)'}]
+  .forEach(n=>{const g=nc.createRadialGradient(n.x*BW,n.y*BH,0,n.x*BW,n.y*BH,Math.max(BW,BH)*n.r);g.addColorStop(0,n.c);g.addColorStop(1,'transparent');nc.fillStyle=g;nc.fillRect(0,0,BW,BH)});
+}
+
+
+function initBg(){bResize();buildNebula();bPs=Array.from({length:65},(_,i)=>new BP(true));bHxs=Array.from({length:11},()=>new BH2())}
+function animBg(ts){
+  requestAnimationFrame(animBg);
+  if(ts-bLast<34)return;bLast=ts;
+  bx.clearRect(0,0,BW,BH);bx.fillStyle='rgba(2,2,8,1)';bx.fillRect(0,0,BW,BH);
+  if(nCvs)bx.drawImage(nCvs,0,0);
+  bx.globalAlpha=1;
+  bHxs.forEach(h=>{h.tick();h.draw()});
+  bPs.forEach(p=>{p.tick();p.draw()});
+  bx.globalAlpha=1;
+}
+
+document.addEventListener('mousemove',e=>{bMx=e.clientX;bMy=e.clientY},{passive:true});
+window.addEventListener('resize',()=>{bResize();buildNebula()},{passive:true});
+
+/* ── CLOCK ── */
+function tickClk(){
+  const n=new Date();
+  let h=n.getHours(),m=n.getMinutes(),s=n.getSeconds();
+  const ap=h>=12?'PM':'AM';h=h%12||12;
+  document.getElementById('clk').textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} ${ap}`;
+  /* homepage mini clock */
+  const hc=document.getElementById('hp-clock-stat');
+  if(hc)hc.textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')} ${ap}`;
+  /* homepage date — set once */
+  const hd=document.getElementById('hp-date');
+  if(hd&&hd.textContent==='—'){
+    const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+    hd.textContent=`${days[n.getDay()]}, ${months[n.getMonth()]} ${n.getDate()}, ${n.getFullYear()}`;
+  }
+}
+
+/* ── THEME ── */
+function setTheme(t){CFG.theme=t;document.documentElement.setAttribute('data-theme',t==='wizard'?'':t);document.querySelectorAll('[data-tv]').forEach(sw=>sw.classList.toggle('on',sw.dataset.tv===t));document.getElementById('ccols').style.display=t==='custom'?'block':'none';saveAll();toast('Enchantment: '+t)}
+function applyCustom(){const a=document.getElementById('ca').value,a2=document.getElementById('ca2').value,bg=document.getElementById('cbg').value;const h2r=h=>{const rv=parseInt(h.slice(1,3),16),gv=parseInt(h.slice(3,5),16),bv=parseInt(h.slice(5,7),16);return`${rv},${gv},${bv}`};const R=document.documentElement;R.style.setProperty('--ac',a);R.style.setProperty('--ac2',a2);R.style.setProperty('--bg0',bg);R.style.setProperty('--gl',`rgba(${h2r(a)},0.38)`);R.style.setProperty('--gl2',`rgba(${h2r(a2)},0.16)`);R.style.setProperty('--gr',`linear-gradient(135deg,${a},${a2})`)}
+
+/* ── CLOAKED ── */
+function toggleStealth(){ST.stealth=!ST.stealth;const tog=document.getElementById('tg-stealth'),tag=document.getElementById('stag'),btn=document.getElementById('bst');if(ST.stealth){document.title=document.getElementById('stitle')?.value||CFG.stealthTitle;let lnk=document.querySelector("link[rel~='icon']")||Object.assign(document.createElement('link'),{rel:'icon'});lnk.href=document.getElementById('sfav')?.value||CFG.stealthFav;document.head.appendChild(lnk);tog.classList.add('on');btn.classList.add('on');tag.style.display='flex';toast('🕶️ Cloaked ✨')}else{document.title='OPSG';const lnk=document.querySelector("link[rel~='icon']");if(lnk)lnk.href='';tog.classList.remove('on');btn.classList.remove('on');tag.style.display='none';toast('Cloak Lifted')}}
+
+/* ── PANIC ── */
+function doPanic(){window.location.replace(document.getElementById('purl')?.value||CFG.panicUrl)}
+function rebindPanic(){if(ST.rebinding)return;ST.rebinding=true;document.getElementById('pdisp').textContent='[ press any key… ]';toast('Press any key to bind…');function h(e){e.preventDefault();CFG.panicKey=e.key;document.getElementById('pdisp').textContent=e.key===' '?'Space':e.key;ST.rebinding=false;saveAll();toast('⌨️ Panic: '+(e.key===' '?'Space':e.key));document.removeEventListener('keydown',h,true)}setTimeout(()=>document.addEventListener('keydown',h,true),130)}
+function scrollPanic(){setTimeout(()=>document.getElementById('psec')?.scrollIntoView({behavior:'smooth',block:'center'}),200)}
+function toggleSet(k){if(k==='ablank'){CFG.ablank=!CFG.ablank;document.getElementById('tg-blank').classList.toggle('on',CFG.ablank)}else if(k==='theater'){CFG.theater=!CFG.theater;document.getElementById('tg-theater').classList.toggle('on',CFG.theater)}saveAll()}
+function toggleSrc(s){CFG.sources[s]=!CFG.sources[s];document.getElementById('tg-'+s).classList.toggle('on',CFG.sources[s]);saveAll()}
+
+/* ── FULLSCREEN ── */
+function toggleFS(){!document.fullscreenElement?document.documentElement.requestFullscreen().catch(()=>{}):document.exitFullscreen().catch(()=>{})}
+function fsGame(){const el=document.getElementById('gv');!document.fullscreenElement?el.requestFullscreen().catch(()=>{}):document.exitFullscreen().catch(()=>{})}
+
+/* ── NAV ── */
+function showP(id){
+  document.querySelectorAll('.panel').forEach(p=>p.classList.remove('on'));
+  document.getElementById('panel-'+id)?.classList.add('on');
+  document.querySelectorAll('.np').forEach(p=>p.classList.remove('on'));
+  document.getElementById('npill-'+id)?.classList.add('on');
+  if(id==='favs')renderFavs();
+  /* slide nav ink to active pill */
+  requestAnimationFrame(()=>{
+    const on=document.querySelector('.np.on');
+    const ink=document.getElementById('nav-ink');
+    if(!on||!ink)return;
+    const nr=document.getElementById('main-nav').getBoundingClientRect();
+    const or=on.getBoundingClientRect();
+    ink.style.cssText=`left:${or.left-nr.left}px;width:${or.width}px;height:${or.height}px;top:${or.top-nr.top}px`;
+  });
+}
+
+/* ── LOAD GAMES ── */
+async function loadGames(){
+  tbStart();
+  ST.games=[];setLoading();
+  const jobs=[];
+  if(CFG.sources.gnmath)jobs.push(GNM.fetch().then(g=>{ST.games.push(...g)}).catch(e=>{console.warn('GN-Math:',e);toast('⚠️ GN-Math failed to load')}));
+  if(CFG.sources.ugs)jobs.push(UGS.fetch().then(g=>{ST.games.push(...g)}).catch(e=>{console.warn('UGS:',e);toast('⚠️ UGS failed to load')}));
+  await Promise.allSettled(jobs);
+  applyFilters();
+  toast(ST.games.length?`✅ ${ST.games.length} `:'⚠️ No spells unlocked — check Settings');
+  tbDone();
+}
+async function reloadGames(){ST.games=[];setLoading();await loadGames()}
+function setLoading(){const g=document.getElementById('gg');g.classList.remove('lv');g.innerHTML='<div class="st"><div class="spin"></div><p>Consulting the Arcane Tomes…</p></div>';document.getElementById('gcnt-total').textContent='0';document.getElementById('gcnt-filter-wrap').style.display='none'}
+
+/* ── FILTER / SORT ── */
+function applyFilters(){
+  let g=[...ST.games];
+  if(ST.srcF!=='all')g=g.filter(x=>x.source===ST.srcF);
+  if(ST.tagF)g=g.filter(x=>x.tags&&x.tags.includes(ST.tagF));
+  if(ST.search){const q=ST.search.toLowerCase();g=g.filter(x=>x.title.toLowerCase().includes(q))}
+  if(ST.sort==='name')g.sort((a,b)=>a.title.localeCompare(b.title));
+  else if(ST.sort==='namez')g.sort((a,b)=>b.title.localeCompare(a.title));
+  else if(ST.sort==='id')g.sort((a,b)=>(a.numId||0)-(b.numId||0));
+  else if(ST.sort==='popular')g.sort((a,b)=>GNM.getPop(b.numId,'year')-GNM.getPop(a.numId,'year'));
+  else if(ST.sort==='trendingMonth')g.sort((a,b)=>GNM.getPop(b.numId,'month')-GNM.getPop(a.numId,'month'));
+  else if(ST.sort==='trendingWeek')g.sort((a,b)=>GNM.getPop(b.numId,'week')-GNM.getPop(a.numId,'week'));
+  else if(ST.sort==='shuffle')g.sort(()=>Math.random()-.5);
+  ST.visible=g;ST.rendered=0;renderGames();
+}
+function setSort(s){ST.sort=s;document.querySelectorAll('[data-s]').forEach(b=>b.classList.toggle('on',b.dataset.s===s));applyFilters()}
+function setView(v){ST.view=v;document.getElementById('gg').classList.toggle('lv',v==='list');document.querySelectorAll('[data-v]').forEach(b=>b.classList.toggle('on',b.dataset.v===v))}
+function setSF(sf){ST.srcF=sf;document.querySelectorAll('[data-sf]').forEach(b=>b.classList.toggle('on',b.dataset.sf===sf));applyFilters()}
+function setTF(t){ST.tagF=t;applyFilters()}
+let _sT=null;
+document.getElementById('srch').addEventListener('input',function(){clearTimeout(_sT);_sT=setTimeout(()=>{ST.search=this.value.trim();applyFilters()},200)});
+
+/* ── RENDER — VIRTUAL BATCHING ── */
+function renderGames(){
+  const g=document.getElementById('gg');
+  g.innerHTML='';
+  animCount(document.getElementById('gcnt-total'),ST.games.length);
+  const isFiltered=ST.visible.length!==ST.games.length||ST.search||ST.tagF||ST.srcF!=='all';
+  document.getElementById('gcnt-filter-wrap').style.display=isFiltered?'flex':'none';
+  animCount(document.getElementById('gcnt-filter'),ST.visible.length,600);
+  g.classList.toggle('lv',ST.view==='list');
+  if(!ST.visible.length){
+    g.innerHTML=`<div class="st" style="grid-column:1/-1"><span class="st-empty-ico">${ST.games.length===0?'📭':'🔍'}</span><div class="st-empty-title">${ST.games.length===0?'No tomes found':'No spells found'}</div><p>${ST.games.length===0?'Enable a tome in the Sanctum':'Try a different incantation'}</p></div>`;
+    return;
+  }
+  addBatch(g);initSent();
+  /* stagger card reveal */
+  requestAnimationFrame(()=>{
+    document.querySelectorAll('#gg .gc').forEach((c,i)=>{c.style.animationDelay=Math.min(i*.025,.5)+'s'});
+  });
+  /* stat pop */
+  const _sn=document.getElementById('gcnt-total');
+  if(_sn){const _sh=_sn.closest('.hh-stat');if(_sh){_sh.classList.remove('pop');void _sh.offsetWidth;_sh.classList.add('pop');}}
+  /* shimmer on active filter btns */
+  document.querySelectorAll('.b.on').forEach(b=>{b.classList.remove('shimmer');void b.offsetWidth;b.classList.add('shimmer');b.addEventListener('animationend',()=>b.classList.remove('shimmer'),{once:true});});
+}
+function addBatch(g){
+  if(!g)g=document.getElementById('gg');
+  const end=Math.min(ST.rendered+ST.PAGE,ST.visible.length);
+  const frag=document.createDocumentFragment();
+  for(let i=ST.rendered;i<end;i++)frag.appendChild(mkCard(ST.visible[i],i));
+  g.appendChild(frag);ST.rendered=end;hookLazy(g);
+}
+let sentObs=null;
+function initSent(){if(sentObs)sentObs.disconnect();if(ST.rendered>=ST.visible.length)return;const el=document.getElementById('lsent');sentObs=new IntersectionObserver(entries=>{if(entries[0].isIntersecting&&ST.rendered<ST.visible.length){addBatch();if(ST.rendered>=ST.visible.length&&sentObs)sentObs.disconnect()}},{rootMargin:'300px',threshold:0});sentObs.observe(el)}
+function hookLazy(root){const imgs=root.querySelectorAll('img[data-src]');if(!imgs.length)return;const obs=new IntersectionObserver((en,o)=>{en.forEach(e=>{if(e.isIntersecting){const img=e.target;img.src=img.dataset.src;img.removeAttribute('data-src');o.unobserve(img)}})},{rootMargin:'150px',threshold:0});imgs.forEach(i=>obs.observe(i))}
+
+function mkCard(g,i){
+  const div=document.createElement('div');div.className='gc';
+  const isFav=ST.favs.includes(g.id);
+  const imgTag=g.cover?`<img data-src="${g.cover}" alt="" loading="lazy" onerror="this.style.display='none'">`:'';
+  // Grid view: title overlaid on cover; list view: title in .cb
+  div.innerHTML=`
+    <div class="cv">
+      ${imgTag}
+      ${!g.cover?`<div class="cfb">🎮</div>`:''}
+      <div class="cv-grad"></div>
+      <div class="cv-src">${g.srcLabel}</div>
+      <div class="cv-title">${g.title}</div>
+      <div class="cov"><div class="pb">▶</div></div>
+      <button class="fs${isFav?' on':''}" data-fid="${g.id}" onclick="event.stopPropagation();toggleFav('${g.id}')" title="${isFav?'Remove from favorites':'Add to favorites'}">${isFav?'★':'☆'}</button>
+    </div>
+    <div class="cb">
+      <div class="ct">${g.title}</div>
+      <div class="cf"><span class="cs">${g.srcLabel}</span><button class="fs${isFav?' on':''}" data-fid="${g.id}_lv" onclick="event.stopPropagation();toggleFav('${g.id}')">${isFav?'★':'☆'}</button></div>
+    </div>`;
+  div.addEventListener('click',()=>openGame(g));
+  return div;
+}
+
+/* ── FAVORITES ── */
+function toggleFav(id){
+  const idx=ST.favs.indexOf(id);
+  idx>=0?(ST.favs.splice(idx,1),toast('Removed from Grimoire')):(ST.favs.push(id),toast('⭐ Bound to Grimoire!'));
+  saveAll();
+  // Update all buttons for this game (grid star + list star both have data-fid variants)
+  document.querySelectorAll(`[data-fid="${id}"], [data-fid="${id}_lv"]`).forEach(btn=>{btn.classList.toggle('on',ST.favs.includes(id));btn.textContent=ST.favs.includes(id)?'★':'☆'});
+  if(document.getElementById('panel-favs').classList.contains('on'))renderFavs();
+}
+function renderFavs(){const g=document.getElementById('fg');const fgs=ST.games.filter(x=>ST.favs.includes(x.id));if(!fgs.length){g.innerHTML='<div class="fe"><span class="fe-i">⭐</span><p style="font-size:.9rem">No spells bound yet — star some to enchant your Grimoire!</p></div>';return}g.innerHTML='';g.classList.remove('lv');const frag=document.createDocumentFragment();fgs.forEach((x,i)=>frag.appendChild(mkCard(x,i)));g.appendChild(frag);hookLazy(g)}
+
+/* ── GAME VIEWER ── */
+async function openGame(g){
+  ST.cur=g;
+  const viewer=document.getElementById('gv'),splash=document.getElementById('gs'),frame=document.getElementById('gf');
+  document.getElementById('vwt').textContent=g.title;
+  frame.src='about:blank';splash.classList.remove('gone');viewer.classList.add('open');
+  if(CFG.theater)viewer.classList.add('theater');
+  const loadP=_doLoad(g,frame);
+  setTimeout(async()=>{try{await loadP}catch(e){}splash.classList.add('gone')},2000);
+}
+
+async function _fetchAndWrite(url,frame){
+  const html=await fetch(url+'?t='+Date.now()).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.text()});
+  const doc=frame.contentDocument||frame.contentWindow?.document;
+  if(!doc)throw new Error('No frame document');
+  doc.open();doc.write(html);doc.close();
+  doc.querySelectorAll('script').forEach(old=>{const ns=document.createElement('script');old.src?ns.src=old.src:ns.textContent=old.textContent;doc.body?.appendChild(ns)});
+}
+
+async function _doLoad(g,frame){
+  if(g.source==='gnmath'){const ok=await GNM.writeToFrame(g,frame);if(!ok)closeGame()}
+  else{await _fetchAndWrite(g._url,frame)}
+}
+
+function closeGame(){const v=document.getElementById('gv');v.classList.remove('open','theater');setTimeout(()=>{document.getElementById('gf').src='about:blank'},280);ST.cur=null}
+function openNewTab(){if(ST.cur)window.open(ST.cur._url,'_blank')}
+
+async function openBlank(){
+  if(!ST.cur)return;const w=window.open('about:blank','_blank');if(!w)return;
+  try{
+    let html;
+    if(ST.cur.source==='gnmath'){const res=GNM.resolveURL2(ST.cur);if(res.type==='ext'){w.close();window.open(res.url,'_blank');return}html=await fetch(res.url+'?t='+Date.now()).then(r=>r.text())}
+    else{html=await fetch(ST.cur._url+'?t='+Date.now()).then(r=>r.text())}
+    w.document.open();w.document.write(html);w.document.close();
+  }catch(e){w.close();toast('❌ Could not open in about:blank')}
+}
+
+async function dlGame(){
+  if(!ST.cur)return;
+  try{toast('📜 Inscribeing…');let url=ST.cur._url;if(ST.cur.source==='gnmath'){const res=GNM.resolveURL2(ST.cur);url=res.url}const html=await fetch(url+'?t='+Date.now()).then(r=>r.text());const a=Object.assign(document.createElement('a'),{href:URL.createObjectURL(new Blob([html],{type:'text/html'})),download:ST.cur.title+'.html'});a.click();URL.revokeObjectURL(a.href);toast('✅ Downloaded!')}
+  catch(e){toast('❌ Download failed')}
+}
+
+function toggleTheater(){const v=document.getElementById('gv');v.classList.toggle('theater');toast(v.classList.contains('theater')?'🌙 Focus On':'Focus Mode Off')}
+
+/* ── BROWSER ── */
+function openBrwBlank(){const w=window.open('about:blank','_blank');w.document.write(`<!DOCTYPE html><html><head><title></title></head><body style="margin:0;overflow:hidden;background:#000"><iframe src="https://p01--purple--ywrpy28b5p6k.code.run/Brome/" style="width:100%;height:100vh;border:none" allowfullscreen></iframe></body></html>`);w.document.close()}
+function toggleInlineBrw(){const wrap=document.getElementById('ibw'),fr=document.getElementById('ibf');const show=wrap.style.display==='none';wrap.style.display=show?'block':'none';fr.src=show?'https://p01--purple--ywrpy28b5p6k.code.run/Brome/':'about:blank'}
+
+/* ── DOCS ── */
+function switchDoc(d){document.querySelectorAll('[data-doc]').forEach(b=>b.classList.toggle('on',b.dataset.doc===d));document.getElementById('dfrm').src={nexus:'https://docs.google.com/document/d/10qlDebKyFqSv4JFjKSml5tl2GEqouKl9bPe5aRGp3Sk/edit?usp=sharing',media:'https://docs.google.com/document/d/100c3NRCEMYaBkW_I0Kggh_dkmOndXyLiYiaHjEuZibM/edit?usp=sharing'}[d]||''}
+
+/* ── SAVE / LOAD DATA ── */
+function sanitizeData(obj,maxStr=1000,maxArr=10000){if(typeof obj==='string')return obj.length>maxStr?obj.slice(0,maxStr)+'...':obj;if(obj instanceof Uint8Array)return obj.length>maxArr?`[Uint8Array too large (${obj.length} bytes), truncated]`:obj;if(Array.isArray(obj))return obj.map(i=>sanitizeData(i,maxStr,maxArr));if(obj&&typeof obj==='object'){const n={};for(const k in obj)if(Object.prototype.hasOwnProperty.call(obj,k))n[k]=sanitizeData(obj[k],maxStr,maxArr);return n}return obj}
+async function saveData(){alert("This might take a while, dont touch anything other than this OK button");const result={cookies:document.cookie,localStorage:{...localStorage},sessionStorage:{...sessionStorage},indexedDB:{},caches:{}};const dbs=await indexedDB.databases();for(const dbInfo of dbs){if(!dbInfo.name)continue;result.indexedDB[dbInfo.name]={};await new Promise((res,rej)=>{const req=indexedDB.open(dbInfo.name,dbInfo.version);req.onerror=()=>rej(req.error);req.onsuccess=()=>{const db=req.result;const storeNames=[...db.objectStoreNames];if(!storeNames.length){res();return}const tx=db.transaction(storeNames,'readonly');Promise.all(storeNames.map(sn=>{result.indexedDB[dbInfo.name][sn]=[];return new Promise((r2,e2)=>{const ga=tx.objectStore(sn).getAll();ga.onsuccess=()=>{result.indexedDB[dbInfo.name][sn]=sanitizeData(ga.result,1000,100);r2()};ga.onerror=()=>e2(ga.error)})})).then(res)}})}const cacheNames=await caches.keys();for(const cn of cacheNames){const cache=await caches.open(cn);result.caches[cn]=[];for(const req of await cache.keys()){const resp=await cache.match(req);if(!resp)continue;const ct=resp.headers.get('content-type')||'';let body;try{if(ct.includes('application/json'))body=await resp.clone().json();else if(ct.includes('text')||ct.includes('javascript'))body=await resp.clone().text();else body=btoa(String.fromCharCode(...new Uint8Array(await resp.clone().arrayBuffer())))}catch(e){body='[Unable to read body]'}result.caches[cn].push({url:req.url,body,contentType:ct})}}alert("Done, wait for the download to come");const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(result)],{type:'application/octet-stream'}));a.download=`${Date.now()}.data`;document.body.appendChild(a);a.click();document.body.removeChild(a);URL.revokeObjectURL(a.href)}
+async function loadData(event){const file=event.target.files[0];if(!file)return;alert("This might take a while, dont touch anything other than this OK button");const reader=new FileReader();reader.onload=async function(e){const data=JSON.parse(e.target.result);if(data.cookies)data.cookies.split(';').forEach(c=>{document.cookie=c.trim()});if(data.localStorage)for(const k in data.localStorage)localStorage.setItem(k,data.localStorage[k]);if(data.sessionStorage)for(const k in data.sessionStorage)sessionStorage.setItem(k,data.sessionStorage[k]);if(data.indexedDB){for(const dbName in data.indexedDB){const stores=data.indexedDB[dbName];await new Promise((res,rej)=>{const req=indexedDB.open(dbName,1);req.onupgradeneeded=ev=>{const db=ev.target.result;for(const sn in stores)if(!db.objectStoreNames.contains(sn))db.createObjectStore(sn,{keyPath:'id',autoIncrement:true})};req.onsuccess=ev=>{const db=ev.target.result;const tx=db.transaction(Object.keys(stores),'readwrite');tx.onerror=()=>rej(tx.error);let p=Object.keys(stores).length;for(const sn in stores){const os=tx.objectStore(sn);os.clear().onsuccess=()=>{for(const item of stores[sn])os.put(item);if(--p===0)res()}}};req.onerror=()=>rej(req.error)})}}if(data.caches){for(const cn in data.caches){const cache=await caches.open(cn);await cache.keys().then(ks=>Promise.all(ks.map(k=>cache.delete(k))));for(const entry of data.caches[cn]){let rb;const ct=entry.contentType||'';if(ct.includes('application/json'))rb=JSON.stringify(entry.body);else if(ct.includes('text')||ct.includes('javascript'))rb=entry.body;else{const b=atob(entry.body);const bytes=new Uint8Array(b.length);for(let i=0;i<b.length;i++)bytes[i]=b.charCodeAt(i);rb=bytes.buffer}await cache.put(entry.url,new Response(rb,{headers:new Headers({'content-type':ct})}))}}}alert("Data loaded")};reader.readAsText(file)}
+
+/* ── KEYBOARD ── */
+document.addEventListener('keydown',e=>{if(ST.rebinding)return;if(e.key===CFG.panicKey&&!['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)){doPanic();return}if(e.key==='Escape'&&document.getElementById('gv').classList.contains('open'))closeGame()});
+
+/* ── APPLY SAVED UI ── */
+function applyUI(){document.getElementById('stitle').value=CFG.stealthTitle;document.getElementById('sfav').value=CFG.stealthFav;document.getElementById('purl').value=CFG.panicUrl;document.getElementById('pdisp').textContent=CFG.panicKey===' '?'Space':CFG.panicKey;document.getElementById('tg-blank').classList.toggle('on',CFG.ablank);document.getElementById('tg-theater').classList.toggle('on',CFG.theater);document.getElementById('tg-gnmath').classList.toggle('on',CFG.sources.gnmath);document.getElementById('tg-ugs').classList.toggle('on',CFG.sources.ugs)}
+
+/* ═══════════════════════════════════════════════════════════
+   POPULAR EFFECTS — JS
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── TOP PROGRESS BAR ───────────────────────────── */
+const topbar=document.getElementById('topbar');
+let _tbTimer=null;
+function tbStart(){
+  topbar.style.transition='width .3s ease,opacity .4s ease';
+  topbar.classList.remove('done');
+  topbar.style.width='0%';
+  void topbar.offsetWidth;
+  topbar.style.width='72%';
+  clearTimeout(_tbTimer);
+}
+function tbDone(){
+  topbar.style.width='100%';
+  _tbTimer=setTimeout(()=>{topbar.classList.add('done');topbar.style.width='0%'},380);
+}
+/* tbStart/tbDone hooked directly into loadGames below */
+
+/* ── ANIMATED COUNTER ───────────────────────────── */
+function animCount(el,target,dur=900){
+  const start=parseInt(el.textContent)||0;
+  if(start===target)return;
+  const t0=performance.now();
+  function step(t){
+    const p=Math.min((t-t0)/dur,1);
+    const ease=1-Math.pow(1-p,4);
+    el.textContent=Math.round(start+(target-start)*ease);
+    if(p<1)requestAnimationFrame(step);
+    else el.textContent=target;
+  }
+  requestAnimationFrame(step);
+}
+/* animCount inlined directly into renderGames */
+
+/* ── RIPPLE CLICK on cards ──────────────────────── */
+document.getElementById('gg').addEventListener('click',function(e){
+  const card=e.target.closest('.gc');if(!card)return;
+  const r=card.getBoundingClientRect();
+  const rip=document.createElement('div');rip.className='ripple';
+  rip.style.cssText=`left:${e.clientX-r.left}px;top:${e.clientY-r.top}px`;
+  card.appendChild(rip);
+  rip.addEventListener('animationend',()=>rip.remove(),{once:true});
+},{passive:true});
+
+/* ── MAGNETIC 3D TILT on cards ─────────────────── */
+let _tiltFrame=null;
+document.getElementById('gg').addEventListener('mousemove',function(e){
+  const card=e.target.closest('.gc');if(!card)return;
+  if(_tiltFrame)return;
+  _tiltFrame=requestAnimationFrame(()=>{
+    _tiltFrame=null;
+    const r=card.getBoundingClientRect();
+    const cx=(e.clientX-r.left)/r.width-.5;
+    const cy=(e.clientY-r.top)/r.height-.5;
+    card.classList.add('tilt');
+    card.style.setProperty('--rx',(-cy*12)+'deg');
+    card.style.setProperty('--ry',(cx*14)+'deg');
+    card.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');
+    card.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%');
+  });
+},{passive:true});
+document.getElementById('gg').addEventListener('mouseleave',function(e){
+  const card=e.target.closest?.('.gc');
+  document.querySelectorAll('.gc.tilt').forEach(c=>{
+    c.classList.remove('tilt');
+    c.style.removeProperty('--rx');c.style.removeProperty('--ry');
+  });
+},{passive:true});
+document.getElementById('gg').addEventListener('mouseout',function(e){
+  const card=e.target.closest('.gc');
+  if(card&&!card.contains(e.relatedTarget)){
+    card.classList.remove('tilt');
+    card.style.removeProperty('--rx');card.style.removeProperty('--ry');
+  }
+},{passive:true});
+
+/* ── SCROLL REVEAL ──────────────────────────────── */
+const _ro=new IntersectionObserver(entries=>{
+  entries.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');_ro.unobserve(en.target)}});
+},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+function initReveal(){document.querySelectorAll('.reveal,.reveal-group').forEach(el=>_ro.observe(el))}
+/* Run after DOM settles */
+setTimeout(initReveal,400);
+
+/* ── NAV INK ────────────────────────────────────── */
+function moveNavInk(){
+  const on=document.querySelector('.np.on');
+  const ink=document.getElementById('nav-ink');
+  if(!on||!ink)return;
+  const nr=document.getElementById('main-nav').getBoundingClientRect();
+  const or=on.getBoundingClientRect();
+  ink.style.cssText=`left:${or.left-nr.left}px;width:${or.width}px;height:${or.height}px;top:${or.top-nr.top}px`;
+}
+
+
+/* ── INIT ── */
+function init(){
+  loadAll();initBg();requestAnimationFrame(animBg);
+  tickClk();setInterval(tickClk,1000);
+  setTheme(CFG.theme);applyUI();
+  setTimeout(()=>{
+    document.getElementById('ss').classList.add('gone');
+    document.getElementById('app').classList.add('vis');
+    requestAnimationFrame(moveNavInk);
+    setTimeout(()=>{initReveal();loadGames()},360);
+  },2300);
+}
+init();
+</script>
+
+</body></html>
